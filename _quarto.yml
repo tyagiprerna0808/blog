@@ -5,7 +5,7 @@ project:
 website:
   title: "Prerna Tyagi"
   description: "Applied AI/ML engineering — from-scratch implementations and experiments"
-  site-url: https://tyagiprerna0808.github.io
+  site-url: https://tyagiprerna0808.github.io/blog
   navbar:
     right:
       - href: index.qmd

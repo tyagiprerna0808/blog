@@ -1,6 +1,8 @@
-# tyagiprerna0808.github.io
+# blog
 
-Source for https://tyagiprerna0808.github.io — Quarto blog on applied AI/ML engineering.
+Source for https://tyagiprerna0808.github.io/blog/ — Quarto blog on applied AI/ML engineering.
+
+The site root (https://tyagiprerna0808.github.io) is a separate repo (`tyagiprerna0808.github.io`) — the personal landing page.
 
 Companion code: https://github.com/tyagiprerna0808/ml-applied-depth.
 
