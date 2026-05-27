@@ -1,0 +1,6 @@
+freeze: true
+format:
+  html:
+    toc: true
+    code-tools: true
+    code-fold: false

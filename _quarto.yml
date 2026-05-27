@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Prerna Tyagi"
+  description: "Applied AI/ML engineering — from-scratch implementations and experiments"
+  site-url: https://tyagiprerna0808.github.io
+  navbar:
+    right:
+      - href: index.qmd
+        text: Blog
+      - href: about.qmd
+        text: About
+      - icon: github
+        href: https://github.com/tyagiprerna0808
+        aria-label: GitHub
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+
+execute:
+  freeze: auto
+
+editor: source

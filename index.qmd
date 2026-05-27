@@ -1,0 +1,13 @@
+---
+title: "Prerna Tyagi"
+subtitle: "Applied AI/ML engineering — from-scratch implementations and experiments"
+listing:
+  contents: posts
+  type: default
+  sort: "date desc"
+  fields: [date, title, description, reading-time]
+  feed: true
+  categories: true
+page-layout: full
+title-block-banner: false
+---

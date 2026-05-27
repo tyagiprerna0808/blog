@@ -1,0 +1,19 @@
+---
+title: "About"
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/tyagiprerna0808
+---
+
+::: {.callout-note}
+Draft. Replace this with your own bio before publishing.
+:::
+
+I'm Prerna Tyagi. Data scientist moving into applied AI/ML engineering.
+
+Each post on this site is paired with a from-scratch implementation in [ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth) and an assignment notebook so a reader can build the same thing themselves before reading the worked version. Inspired by [Tanul Singh's gradient-descent-through-transformers series](https://tanulsingh.github.io/blog).
+
+My main shipped product is **Pragya Nursery** — a real ordering platform I built for my father's nursery in Greater Noida.
