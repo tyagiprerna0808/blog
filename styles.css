@@ -1,0 +1,14 @@
+/* Override theme tweaks. Keep it minimal — readability over flourish. */
+
+.quarto-title-block .description {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+pre code {
+  font-size: 0.9rem;
+}
+
+.quarto-listing .listing-title {
+  font-weight: 600;
+}
