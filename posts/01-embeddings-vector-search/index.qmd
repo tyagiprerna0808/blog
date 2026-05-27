@@ -1,0 +1,74 @@
+---
+title: "Embeddings & Vector Search Internals"
+description: "Similarity metrics, brute-force NN, IVF, PQ, and HNSW — implemented from scratch, measured on a real corpus."
+author: "Prerna Tyagi"
+date: "2026-05-27"
+date-modified: last-modified
+categories: [retrieval, embeddings, ann]
+draft: true
+reading-time: true
+toc: true
+toc-depth: 3
+code-fold: false
+---
+
+::: {.callout-note}
+**Draft scaffold.** Section headers and placeholders only. Content gets written from notes + experiments in [ml-applied-depth/blog/01-embeddings](https://github.com/tyagiprerna0808/ml-applied-depth/tree/main/blog/01-embeddings). Remove this callout and set `draft: false` to publish.
+:::
+
+## The question
+
+> Given a corpus of millions of documents and a query, return the top-k nearest neighbors in <10 ms with recall@10 > 0.95, on a laptop. How does that actually work?
+
+*[Set up the problem. Why naive search hits a wall. What "approximate" means and the tradeoff axes: recall, latency, build time, memory.]*
+
+## 1. What an embedding actually is
+
+*[The basis-free view. Intrinsic vs extrinsic geometry. Why "similarity" is a choice — show the same embedding compared by cosine vs dot product producing different rankings on the same query.]*
+
+## 2. Similarity metrics
+
+*[Cosine, dot product, L2. When each is correct. The unit-normalization trick — what it costs (and the cases where it isn't free).]*
+
+## 3. Brute-force baseline
+
+*[Naive O(n) search. Vectorized numpy. Plot: runtime vs n at fixed d, runtime vs d at fixed n. The point where brute-force stops being acceptable.]*
+
+## 4. The curse of dimensionality
+
+*[Empirical: distribution of pairwise distances at d=10, 100, 1000. Plot. Explain what the concentration means for nearest-neighbor algorithms.]*
+
+## 5. IVF — Inverted File Index
+
+*[k-means clustering of the corpus. Probe count. Recall/latency tradeoff. From-scratch implementation. Plot: recall@10 vs nprobe at fixed nlist; recall@10 vs nlist at fixed nprobe.]*
+
+## 6. PQ — Product Quantization
+
+*[Block decomposition. Codebook learning. Asymmetric distance computation. From-scratch implementation. Memory footprint comparison. Plot.]*
+
+## 7. HNSW — Hierarchical Navigable Small World
+
+*[Multi-layer graph construction. Greedy descent. M and efSearch. The small-world property derivation, not assertion. From-scratch implementation. Plots: recall vs efSearch, recall vs M.]*
+
+## 8. Head-to-head
+
+*[Single plot: recall@10 vs query latency for brute-force, IVF, PQ, HNSW, and FAISS reference. Build time vs N. Memory footprint vs N. The one chart that summarizes the whole post.]*
+
+## 9. Production considerations
+
+*[When to use what. Hosted vs in-process. Filtered search (when metadata matters). Updating the index. The decisions that don't show up in benchmarks.]*
+
+## What surprised me
+
+*[The bugs hit. The configs that didn't work. The number that came out smaller/larger than expected. This section is the credibility signal — keep it specific and honest.]*
+
+## Build it yourself
+
+The companion notebook in [ml-applied-depth/blog/01-embeddings/assignment.ipynb](https://github.com/tyagiprerna0808/ml-applied-depth/tree/main/blog/01-embeddings) has the same content as scaffolding with TODOs and tests. Implement each section yourself before reading the worked version in `notebook.ipynb`.
+
+## References
+
+- Malkov & Yashunin, 2016 — *Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs*
+- Jégou, Douze, Schmid, 2010 — *Product quantization for nearest neighbor search*
+- Johnson, Douze, Jégou, 2017 — *Billion-scale similarity search with GPUs* (FAISS)
+- FAISS wiki — Getting Started + Index Types
