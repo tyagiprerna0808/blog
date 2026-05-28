@@ -1,0 +1,87 @@
+---
+page-layout: full
+title-block-banner: false
+toc: false
+---
+
+::: {.section-head}
+<p class="section-crumb">projects/</p>
+
+# Things I've Built
+
+<p class="section-subtitle">Shipped products and open-source case studies, ranging from a live e-commerce platform to applied ML pipelines.</p>
+:::
+
+<div class="project-list">
+
+<a class="project-card" href="https://github.com/tyagiprerna0808/pragya-nursery-platform" target="_blank" rel="noopener">
+  <div class="project-tags">
+    <span class="project-tag">Shipped</span>
+    <span class="project-tag">E-commerce</span>
+    <span class="project-tag">Capacitor</span>
+    <span class="project-tag">Paytm</span>
+  </div>
+  <h3 class="project-title">Pragya Nursery — live ordering platform</h3>
+  <p class="project-description">A real ordering platform for my father's plant nursery in Greater Noida. Vercel website + Render API + Capacitor Android app, with Paytm payments, geofenced delivery within 15 km, persistent order storage, and CI-deployed on every push to master. Live customers, real revenue.</p>
+</a>
+
+<a class="project-card" href="https://github.com/tyagiprerna0808/ml-applied-depth" target="_blank" rel="noopener">
+  <div class="project-tags">
+    <span class="project-tag">Work-in-progress</span>
+    <span class="project-tag">Embeddings</span>
+    <span class="project-tag">Retrieval</span>
+    <span class="project-tag">Quarto</span>
+  </div>
+  <h3 class="project-title">ml-applied-depth — companion code for this blog</h3>
+  <p class="project-description">From-scratch implementations of the building blocks of modern AI products, paired with every blog post. Notebooks + experiments + assignment scaffolds so readers can build each component themselves before reading the worked version.</p>
+</a>
+
+<a class="project-card" href="https://github.com/tyagiprerna0808/credit-risk-studio" target="_blank" rel="noopener">
+  <div class="project-tags">
+    <span class="project-tag">ML Pipeline</span>
+    <span class="project-tag">Fintech</span>
+    <span class="project-tag">Dashboards</span>
+  </div>
+  <h3 class="project-title">Credit Risk Studio</h3>
+  <p class="project-description">End-to-end ML pipeline case study with feature engineering, model selection, calibration, and a dashboard front end. Built as a portfolio piece demonstrating production-grade credit-risk modeling.</p>
+</a>
+
+<a class="project-card" href="https://github.com/tyagiprerna0808/fraud-detection-monitor" target="_blank" rel="noopener">
+  <div class="project-tags">
+    <span class="project-tag">Production API</span>
+    <span class="project-tag">Docker</span>
+    <span class="project-tag">Fraud</span>
+  </div>
+  <h3 class="project-title">Fraud Detection Monitor</h3>
+  <p class="project-description">Production-style fraud API with health/readiness endpoints, Docker workflow, baseline benchmark artifacts, and observability hooks. Built like a real service, not a notebook.</p>
+</a>
+
+<a class="project-card" href="https://github.com/tyagiprerna0808/fintech-github-showcase/tree/main/personalized-marketplace-search" target="_blank" rel="noopener">
+  <div class="project-tags">
+    <span class="project-tag">Retrieval</span>
+    <span class="project-tag">Ranking</span>
+    <span class="project-tag">Hybrid Search</span>
+  </div>
+  <h3 class="project-title">Personalized Marketplace Search</h3>
+  <p class="project-description">Hybrid retrieval (sparse + dense) with cross-encoder reranking, offline metrics, and an API serving layer. Built like a production relevance system rather than a one-off notebook.</p>
+</a>
+
+<a class="project-card" href="https://github.com/tyagiprerna0808/treasury-forecast-lab" target="_blank" rel="noopener">
+  <div class="project-tags">
+    <span class="project-tag">Time Series</span>
+    <span class="project-tag">Forecasting</span>
+  </div>
+  <h3 class="project-title">Treasury Forecast Lab</h3>
+  <p class="project-description">Forecasting workflow demonstrating time-series modeling, evaluation, and practical decision support for treasury operations.</p>
+</a>
+
+<a class="project-card" href="https://github.com/tyagiprerna0808/portfolio-optimizer-lab" target="_blank" rel="noopener">
+  <div class="project-tags">
+    <span class="project-tag">Optimization</span>
+    <span class="project-tag">Quantitative</span>
+  </div>
+  <h3 class="project-title">Portfolio Optimizer Lab</h3>
+  <p class="project-description">Optimization and quantitative modeling case study for decision support, with reproducible experiments and clean APIs.</p>
+</a>
+
+</div>

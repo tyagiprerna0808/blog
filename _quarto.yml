@@ -10,7 +10,11 @@ website:
     pinned: true
     right:
       - href: index.qmd
-        text: Writing
+        text: Blog
+      - href: projects.qmd
+        text: Projects
+      - text: Notes
+        href: https://github.com/tyagiprerna0808/ml-applied-depth/tree/main/notes
       - href: about.qmd
         text: About
       - icon: github

@@ -5,25 +5,17 @@ listing:
   sort: "date desc"
   fields: [date, title, description, reading-time, categories]
   feed: true
-  categories: true
+  categories: false
   date-format: "MMM D, YYYY"
 page-layout: full
 title-block-banner: false
 toc: false
 ---
 
-::: {.hero-block}
+::: {.section-head}
+<p class="section-crumb">blog/</p>
 
-# Prerna Tyagi
+# Articles & Deep Dives
 
-<p class="role">Applied AI/ML engineering · India</p>
-
-<p class="terminal-tag">// from-scratch implementations · measured on real corpora</p>
-
-A series on what's inside the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning. Each post is paired with a companion notebook in [ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth).
-
+<p class="section-subtitle">From-scratch implementations of the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning. Each post pairs explanation with running code and measured experiments.</p>
 :::
-
-<hr/>
-
-<div class="landing-section-heading">Writing</div>

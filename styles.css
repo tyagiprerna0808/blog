@@ -19,9 +19,9 @@
   --text-muted: #7a7268;
 
   /* Accents */
-  --primary: #e8976c;       /* peach */
+  --primary: #e8976c;
   --primary-hover: #f0b08a;
-  --accent: #d4a843;        /* mustard */
+  --accent: #d4a843;
   --sage: #8baf7a;
 
   /* Borders */
@@ -52,7 +52,32 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   font-weight: 400;
+  position: relative;
 }
+
+/* Galaxy / constellation background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('images/galaxy.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.65;
+  z-index: 0;
+  pointer-events: none;
+  animation: galaxyDrift 60s ease-in-out infinite alternate;
+}
+
+@keyframes galaxyDrift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-12px, -8px, 0) scale(1.015); }
+  100% { transform: translate3d(8px, -4px, 0) scale(1.025); }
+}
+
+/* Keep content above the bg layer */
+.navbar, main, .quarto-content, .page-layout-article, footer, .nav-footer { position: relative; z-index: 1; }
 
 ::selection { background: var(--primary); color: var(--bg); }
 
@@ -94,14 +119,14 @@ h1, .quarto-title-block .title { font-size: 2.25rem; }
 h2 { font-size: 1.6rem; margin-top: 2.5rem; }
 h3 { font-size: 1.25rem; margin-top: 1.75rem; }
 
-/* ============ Column width ============ */
+/* ============ Layout column ============ */
 
 main, .quarto-content, .page-columns {
   max-width: 760px;
   margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
-
-.page-layout-article { max-width: 760px; margin: 0 auto; }
 
 /* ============ Navbar ============ */
 
@@ -129,8 +154,9 @@ main, .quarto-content, .page-columns {
   color: var(--text-secondary) !important;
 }
 
-.navbar .nav-link:hover {
-  color: var(--text) !important;
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--primary) !important;
 }
 
 .navbar .navbar-toggler {
@@ -138,7 +164,39 @@ main, .quarto-content, .page-columns {
   color: var(--text-secondary);
 }
 
-/* ============ Title block (posts) ============ */
+/* ============ Section heads (Blog/Projects/About landing) ============ */
+
+.section-head {
+  padding: 3.5rem 0 2.5rem;
+}
+
+.section-crumb {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--primary);
+  margin: 0 0 1rem;
+  text-transform: lowercase;
+  letter-spacing: 0;
+}
+
+.section-head h1 {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2.5rem, 6vw, 4rem) !important;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.section-subtitle {
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 640px;
+}
+
+/* ============ Post title block ============ */
 
 .quarto-title-block {
   margin-top: 1rem;
@@ -168,50 +226,9 @@ main, .quarto-content, .page-columns {
   letter-spacing: 0.02em;
 }
 
-/* ============ Hero (landing page) ============ */
+/* ============ Listing — notebook-cell cards with counter ============ */
 
-.hero-block {
-  padding: 3.5rem 0 2rem;
-}
-
-.hero-block h1 {
-  font-family: var(--font-serif) !important;
-  font-size: clamp(2.5rem, 6vw, 4rem) !important;
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  margin: 0;
-  color: var(--text) !important;
-}
-
-.hero-block .role {
-  font-family: var(--font-sans);
-  font-size: 1.05rem;
-  color: var(--text-secondary) !important;
-  margin: 0.5rem 0 0;
-  font-weight: 500;
-}
-
-.hero-block .terminal-tag {
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  color: var(--text-muted) !important;
-  margin: 0.75rem 0 0;
-  letter-spacing: 0;
-}
-
-.hero-block > p:not(.role):not(.terminal-tag) {
-  margin-top: 2rem;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--text-secondary) !important;
-}
-
-.hero-block + hr { margin-top: 0.5rem; }
-
-/* ============ Listing — Tanul "notebook-cell" cards ============ */
-
-.quarto-listing { margin-top: 1.5rem; }
+.quarto-listing { margin-top: 1.5rem; counter-reset: post-counter; }
 
 .list > div.quarto-post,
 .list .quarto-post,
@@ -223,6 +240,8 @@ main, .quarto-content, .page-columns {
   padding: 1.5rem 1.75rem;
   margin-bottom: 1rem;
   transition: border-left-color 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  counter-increment: post-counter;
 }
 
 .list > div.quarto-post:hover,
@@ -230,6 +249,21 @@ main, .quarto-content, .page-columns {
 .quarto-listing-default .list-item:hover {
   border-left-color: var(--primary);
   border-color: var(--border-hover);
+}
+
+/* Post counter "01", "02" on the left side, desktop only */
+@media (min-width: 992px) {
+  .list > div.quarto-post::before,
+  .list .quarto-post::before {
+    content: counter(post-counter, decimal-leading-zero);
+    position: absolute;
+    left: -3.5rem;
+    top: 1.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
 }
 
 .quarto-listing .listing-title,
@@ -303,6 +337,174 @@ main, .quarto-content, .page-columns {
   color: var(--primary-hover) !important;
 }
 
+/* ============ Projects page cards ============ */
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  display: block;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  border-radius: 3px;
+  padding: 1.5rem 1.75rem;
+  text-decoration: none !important;
+  color: var(--text) !important;
+  transition: border-left-color 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+  border-left-color: var(--primary);
+  border-color: var(--border-hover);
+  text-decoration: none !important;
+}
+
+.project-tags {
+  margin-bottom: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.project-tag {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.22rem 0.55rem;
+  border-radius: 3px;
+  text-transform: lowercase;
+}
+
+.project-title {
+  font-family: var(--font-serif) !important;
+  font-weight: 700;
+  font-size: 1.4rem !important;
+  color: var(--text) !important;
+  margin: 0 0 0.5rem !important;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.project-card:hover .project-title { color: var(--primary) !important; }
+
+.project-description {
+  color: var(--text-secondary) !important;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ============ About page ============ */
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding: 3rem 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 0 1rem;
+  }
+}
+
+.about-photo-wrap {
+  position: relative;
+  width: 280px;
+  height: 336px;
+}
+
+@media (max-width: 768px) {
+  .about-photo-wrap {
+    width: 220px;
+    height: 264px;
+    margin: 0 auto;
+  }
+}
+
+.about-photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  z-index: 1;
+  border: 1px solid var(--border);
+}
+
+.about-photo-halo {
+  position: absolute;
+  inset: -8px;
+  background: linear-gradient(135deg, #e8976c, #d4a843, #8baf7a);
+  filter: blur(24px);
+  opacity: 0.35;
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.about-name {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2.4rem, 5vw, 3.5rem) !important;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0.5rem 0 1rem !important;
+}
+
+.about-tagline {
+  font-size: 1.15rem;
+  color: var(--text) !important;
+  margin: 0 0 1rem;
+  line-height: 1.55;
+}
+
+.about-tagline strong { color: var(--primary); font-weight: 600; }
+
+.about-bio {
+  color: var(--text-secondary) !important;
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.about-links {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.about-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary) !important;
+  background: var(--bg-surface);
+  transition: all 0.15s ease;
+  text-decoration: none !important;
+}
+
+.about-links a:hover {
+  color: var(--primary) !important;
+  border-color: var(--primary);
+  background: var(--bg-elevated);
+  text-decoration: none !important;
+}
+
 /* ============ Code blocks ============ */
 
 pre, code, kbd, samp {
@@ -338,7 +540,6 @@ code:not(pre code) {
 
 a code:not(pre code) { color: var(--primary); }
 
-/* Subtle syntax highlight tuned to palette */
 .sourceCode { background: var(--code-bg); }
 code span.kw { color: var(--primary); }
 code span.dt { color: var(--accent); }
@@ -348,7 +549,6 @@ code span.fu { color: var(--primary); }
 code span.dv, code span.fl { color: var(--accent); }
 code span.cn { color: var(--accent); }
 
-/* Code copy button */
 .code-copy-button {
   color: var(--text-muted) !important;
   background: transparent !important;
@@ -465,19 +665,6 @@ h4:hover .header-anchor { opacity: 0.7; }
   text-decoration: none;
 }
 
-/* ============ Section heading on landing (Writing) ============ */
-
-.landing-section-heading {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  margin: 2.5rem 0 1rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.6rem;
-}
-
 /* ============ Footer ============ */
 
 .nav-footer, .page-footer, footer.footer {
@@ -499,7 +686,7 @@ h4:hover .header-anchor { opacity: 0.7; }
   color: var(--primary) !important;
 }
 
-/* ============ Misc darkly overrides ============ */
+/* ============ Misc ============ */
 
 .card, .quarto-listing-cols {
   background: var(--bg-surface) !important;
@@ -512,16 +699,6 @@ h4:hover .header-anchor { opacity: 0.7; }
   border-color: var(--border) !important;
 }
 
-/* About page (trestles template) — push it dark */
-.about-link, .about-links a {
-  color: var(--primary) !important;
-}
-
-.about-link:hover, .about-links a:hover {
-  color: var(--primary-hover) !important;
-}
-
-/* TOC if it ever appears */
 #TOC, nav#TOC {
   font-family: var(--font-sans);
   font-size: 0.875rem;
