@@ -1,5 +1,47 @@
 [
   {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Things I’ve Built",
+    "section": "",
+    "text": "projects/\n\n\nThings I’ve Built\n\nShipped products and open-source case studies, ranging from a live e-commerce platform to applied ML pipelines.\n\n\n\n\n\n\n&lt;span class=\"project-tag\"&gt;Shipped&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;E-commerce&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Capacitor&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Paytm&lt;/span&gt;\n\n\nPragya Nursery — live ordering platform\n\n\nA real ordering platform for my father’s plant nursery in Greater Noida. Vercel website + Render API + Capacitor Android app, with Paytm payments, geofenced delivery within 15 km, persistent order storage, and CI-deployed on every push to master. Live customers, real revenue.\n\n\n\n\n&lt;span class=\"project-tag\"&gt;Work-in-progress&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Embeddings&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Retrieval&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Quarto&lt;/span&gt;\n\n\nml-applied-depth — companion code for this blog\n\n\nFrom-scratch implementations of the building blocks of modern AI products, paired with every blog post. Notebooks + experiments + assignment scaffolds so readers can build each component themselves before reading the worked version.\n\n\n\n\n&lt;span class=\"project-tag\"&gt;ML Pipeline&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Fintech&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Dashboards&lt;/span&gt;\n\n\nCredit Risk Studio\n\n\nEnd-to-end ML pipeline case study with feature engineering, model selection, calibration, and a dashboard front end. Built as a portfolio piece demonstrating production-grade credit-risk modeling.\n\n\n\n\n&lt;span class=\"project-tag\"&gt;Production API&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Docker&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Fraud&lt;/span&gt;\n\n\nFraud Detection Monitor\n\n\nProduction-style fraud API with health/readiness endpoints, Docker workflow, baseline benchmark artifacts, and observability hooks. Built like a real service, not a notebook.\n\n\n\n\n&lt;span class=\"project-tag\"&gt;Retrieval&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Ranking&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Hybrid Search&lt;/span&gt;\n\n\nPersonalized Marketplace Search\n\n\nHybrid retrieval (sparse + dense) with cross-encoder reranking, offline metrics, and an API serving layer. Built like a production relevance system rather than a one-off notebook.\n\n\n\n\n&lt;span class=\"project-tag\"&gt;Time Series&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Forecasting&lt;/span&gt;\n\n\nTreasury Forecast Lab\n\n\nForecasting workflow demonstrating time-series modeling, evaluation, and practical decision support for treasury operations.\n\n\n\n\n&lt;span class=\"project-tag\"&gt;Optimization&lt;/span&gt;\n&lt;span class=\"project-tag\"&gt;Quantitative&lt;/span&gt;\n\n\nPortfolio Optimizer Lab\n\n\nOptimization and quantitative modeling case study for decision support, with reproducible experiments and clean APIs."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Articles & Deep Dives",
+    "section": "",
+    "text": "blog/\n\n\nArticles & Deep Dives\n\nFrom-scratch implementations of the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning. Each post pairs explanation with running code and measured experiments.\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings & Vector Search Internals\n\n\n\nretrieval\n\nembeddings\n\nann\n\nwork-in-progress\n\n\n\nBrute-force, IVF, PQ, HNSW — implemented and measured from scratch. Work in progress.\n\n\n\n\n\nMay 28, 2026\n\n4 min\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Prerna Tyagi",
+    "section": "",
+    "text": "&lt;div class=\"about-photo-halo\"&gt;&lt;/div&gt;\n&lt;img src=\"images/profile.jpg\"\n     onerror=\"this.src='images/profile-placeholder.svg'\"\n     class=\"about-photo\"\n     alt=\"Prerna Tyagi\"&gt;\n\n\n&lt;p class=\"section-crumb\"&gt;about me&lt;/p&gt;\n&lt;h1 class=\"about-name\"&gt;Prerna Tyagi&lt;/h1&gt;\n&lt;p class=\"about-tagline\"&gt;AI/ML engineer building product-grade systems. Currently moving from model-focused data science into &lt;strong&gt;applied AI engineering&lt;/strong&gt;.&lt;/p&gt;\n&lt;p class=\"about-bio\"&gt;Self-taught the production half of the stack — APIs, deployment, observability, evals — while shipping a real e-commerce product for my father's plant nursery, and writing a long-form series implementing the building blocks of modern AI from scratch.&lt;/p&gt;\n\n&lt;div class=\"about-links\"&gt;\n  &lt;a href=\"https://github.com/tyagiprerna0808\" target=\"_blank\" rel=\"noopener\" aria-label=\"GitHub\"&gt;\n    &lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 16 16\" fill=\"currentColor\"&gt;&lt;path d=\"M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z\"/&gt;&lt;/svg&gt;\n  &lt;/a&gt;\n  &lt;a href=\"https://www.linkedin.com/in/prerna-tyagi-/\" target=\"_blank\" rel=\"noopener\" aria-label=\"LinkedIn\"&gt;\n    &lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 16 16\" fill=\"currentColor\"&gt;&lt;path d=\"M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z\"/&gt;&lt;/svg&gt;\n  &lt;/a&gt;\n  &lt;a href=\"https://x.com/prernaaa0808\" target=\"_blank\" rel=\"noopener\" aria-label=\"X / Twitter\"&gt;\n    &lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 16 16\" fill=\"currentColor\"&gt;&lt;path d=\"M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z\"/&gt;&lt;/svg&gt;\n  &lt;/a&gt;\n  &lt;a href=\"https://www.kaggle.com/prena0808\" target=\"_blank\" rel=\"noopener\" aria-label=\"Kaggle\"&gt;\n    &lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\"&gt;&lt;path d=\"M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358\"/&gt;&lt;/svg&gt;\n  &lt;/a&gt;\n&lt;/div&gt;"
+  },
+  {
+    "objectID": "about.html#the-work",
+    "href": "about.html#the-work",
+    "title": "Prerna Tyagi",
+    "section": "The work",
+    "text": "The work\nI build AI/ML products end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation. The portfolio split:\n\nShipped product — Pragya Nursery, a real e-commerce platform live for my father’s plant nursery in Greater Noida. Vercel + Render + Capacitor + Paytm.\nOpen-source case studies — Credit Risk Studio, Fraud Detection Monitor, Personalized Marketplace Search, and others — each built with production discipline.\nThis blog series — implementing modern AI building blocks from scratch, paired with companion notebooks in ml-applied-depth."
+  },
+  {
+    "objectID": "about.html#currently-learning-in-public",
+    "href": "about.html#currently-learning-in-public",
+    "title": "Prerna Tyagi",
+    "section": "Currently learning in public",
+    "text": "Currently learning in public\nA long-form series on what’s actually inside the production AI stack — embeddings, retrieval, evals, agents, fine-tuning. Each post takes weeks because every claim is paired with running from-scratch code and measured experiments. The point isn’t to be the first to write about these topics — it’s to be honest about what depth actually costs. Read more in the blog."
+  },
+  {
+    "objectID": "about.html#reach-out",
+    "href": "about.html#reach-out",
+    "title": "Prerna Tyagi",
+    "section": "Reach out",
+    "text": "Reach out\nEmail best for substantive things. DMs open on X and LinkedIn for short threads. GitHub for code."
+  },
+  {
     "objectID": "posts/01-embeddings-vector-search/index.html",
     "href": "posts/01-embeddings-vector-search/index.html",
     "title": "Embeddings & Vector Search Internals",
@@ -54,33 +96,5 @@
     "title": "Embeddings & Vector Search Internals",
     "section": "Working notes",
     "text": "Working notes\nSession-1 raw notes (warts and all): notes/post-01-session-1.md. Tutor review of those notes — including the math errors I caught: notes/post-01-session-1-review.md."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Prerna Tyagi — AI/ML engineer. I build product-grade AI/ML systems end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation.\nThis blog is the long-form companion to my work. Each post pairs an explanation with a from-scratch implementation in ml-applied-depth, plus an assignment notebook so a reader can build the same thing themselves before reading the worked version."
-  },
-  {
-    "objectID": "about.html#shipped",
-    "href": "about.html#shipped",
-    "title": "About",
-    "section": "Shipped",
-    "text": "Shipped\n\nPragya Nursery — ordering platform for my father’s nursery in Greater Noida. Vercel website + Render API + Capacitor Android app + Paytm payments."
-  },
-  {
-    "objectID": "about.html#open-source",
-    "href": "about.html#open-source",
-    "title": "About",
-    "section": "Open-source",
-    "text": "Open-source\n\nCredit Risk Studio — end-to-end ML pipeline case study\nPortfolio Optimizer Lab — optimization for decision support\nTreasury Forecast Lab — time-series forecasting workflow\nFraud Detection Monitor — production-style fraud API\nPersonalized Marketplace Search — hybrid retrieval + reranking"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Prerna Tyagi",
-    "section": "",
-    "text": "Prerna Tyagi\n\nApplied AI/ML engineering · India\n\n\n// from-scratch implementations · measured on real corpora\n\nA series on what’s inside the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning. Each post is paired with a companion notebook in ml-applied-depth.\n\n\n\nWriting\n\n\n\n\n\n\n\n\n\n\nEmbeddings & Vector Search Internals\n\n\n\nretrieval\n\nembeddings\n\nann\n\nwork-in-progress\n\n\n\nBrute-force, IVF, PQ, HNSW — implemented and measured from scratch. Work in progress.\n\n\n\n\n\nMay 28, 2026\n\n4 min\n\n\n\n\nNo matching items"
   }
 ]

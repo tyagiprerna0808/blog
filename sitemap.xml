@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tyagiprerna0808.github.io/blog/posts/01-embeddings-vector-search/index.html</loc>
-    <lastmod>2026-05-28T17:22:00.545Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tyagiprerna0808.github.io/blog/about.html</loc>
-    <lastmod>2026-05-28T17:21:34.937Z</lastmod>
+    <loc>https://tyagiprerna0808.github.io/blog/projects.html</loc>
+    <lastmod>2026-05-28T17:40:04.087Z</lastmod>
   </url>
   <url>
     <loc>https://tyagiprerna0808.github.io/blog/index.html</loc>
-    <lastmod>2026-05-28T17:21:26.862Z</lastmod>
+    <lastmod>2026-05-28T17:39:45.957Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tyagiprerna0808.github.io/blog/about.html</loc>
+    <lastmod>2026-05-28T17:40:49.775Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tyagiprerna0808.github.io/blog/posts/01-embeddings-vector-search/index.html</loc>
+    <lastmod>2026-05-28T17:22:00.545Z</lastmod>
   </url>
 </urlset>

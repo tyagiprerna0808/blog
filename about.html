@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Prerna Tyagi</title>
+<title>about – Prerna Tyagi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -74,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -93,7 +94,15 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Writing</span></a>
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/tyagiprerna0808/ml-applied-depth/tree/main/notes"> 
+<span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
@@ -112,61 +121,76 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<div class="about-hero">
+<div class="about-photo-wrap">
+<pre><code>&lt;div class="about-photo-halo"&gt;&lt;/div&gt;
+&lt;img src="images/profile.jpg"
+     onerror="this.src='images/profile-placeholder.svg'"
+     class="about-photo"
+     alt="Prerna Tyagi"&gt;</code></pre>
 </div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://github.com/tyagiprerna0808" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://www.linkedin.com/in/prerna-tyagi-/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://x.com/prernaaa0808" class="about-link" rel="" target="">
-    <i class="bi bi-twitter-x"></i>
-     <span class="about-link-text">X</span>
-  </a>
+<div class="about-intro">
+<pre><code>&lt;p class="section-crumb"&gt;about me&lt;/p&gt;
+&lt;h1 class="about-name"&gt;Prerna Tyagi&lt;/h1&gt;
+&lt;p class="about-tagline"&gt;AI/ML engineer building product-grade systems. Currently moving from model-focused data science into &lt;strong&gt;applied AI engineering&lt;/strong&gt;.&lt;/p&gt;
+&lt;p class="about-bio"&gt;Self-taught the production half of the stack — APIs, deployment, observability, evals — while shipping a real e-commerce product for my father's plant nursery, and writing a long-form series implementing the building blocks of modern AI from scratch.&lt;/p&gt;
+
+&lt;div class="about-links"&gt;
+  &lt;a href="https://github.com/tyagiprerna0808" target="_blank" rel="noopener" aria-label="GitHub"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="currentColor"&gt;&lt;path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/&gt;&lt;/svg&gt;
+  &lt;/a&gt;
+  &lt;a href="https://www.linkedin.com/in/prerna-tyagi-/" target="_blank" rel="noopener" aria-label="LinkedIn"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="currentColor"&gt;&lt;path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/&gt;&lt;/svg&gt;
+  &lt;/a&gt;
+  &lt;a href="https://x.com/prernaaa0808" target="_blank" rel="noopener" aria-label="X / Twitter"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="currentColor"&gt;&lt;path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/&gt;&lt;/svg&gt;
+  &lt;/a&gt;
+  &lt;a href="https://www.kaggle.com/prena0808" target="_blank" rel="noopener" aria-label="Kaggle"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"&gt;&lt;path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358"/&gt;&lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
 </div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Prerna Tyagi — AI/ML engineer. I build product-grade AI/ML systems end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation.</p>
-<p>This blog is the long-form companion to my work. Each post pairs an explanation with a from-scratch implementation in <a href="https://github.com/tyagiprerna0808/ml-applied-depth">ml-applied-depth</a>, plus an assignment notebook so a reader can build the same thing themselves before reading the worked version.</p>
-<section id="shipped" class="level2">
-<h2 data-anchor-id="shipped">Shipped</h2>
+</div>
+<section id="the-work" class="level2">
+<h2 class="anchored" data-anchor-id="the-work">The work</h2>
+<p>I build AI/ML products end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation. The portfolio split:</p>
 <ul>
-<li><strong><a href="https://github.com/tyagiprerna0808/pragya-nursery-platform">Pragya Nursery</a></strong> — ordering platform for my father’s nursery in Greater Noida. Vercel website + Render API + Capacitor Android app + Paytm payments.</li>
+<li><strong>Shipped product</strong> — <a href="https://github.com/tyagiprerna0808/pragya-nursery-platform">Pragya Nursery</a>, a real e-commerce platform live for my father’s plant nursery in Greater Noida. Vercel + Render + Capacitor + Paytm.</li>
+<li><strong>Open-source case studies</strong> — <a href="https://github.com/tyagiprerna0808/credit-risk-studio">Credit Risk Studio</a>, <a href="https://github.com/tyagiprerna0808/fraud-detection-monitor">Fraud Detection Monitor</a>, <a href="https://github.com/tyagiprerna0808/fintech-github-showcase/tree/main/personalized-marketplace-search">Personalized Marketplace Search</a>, and others — each built with production discipline.</li>
+<li><strong>This blog series</strong> — implementing modern AI building blocks from scratch, paired with companion notebooks in <a href="https://github.com/tyagiprerna0808/ml-applied-depth">ml-applied-depth</a>.</li>
 </ul>
 </section>
-<section id="open-source" class="level2">
-<h2 data-anchor-id="open-source">Open-source</h2>
-<ul>
-<li><a href="https://github.com/tyagiprerna0808/credit-risk-studio">Credit Risk Studio</a> — end-to-end ML pipeline case study</li>
-<li><a href="https://github.com/tyagiprerna0808/portfolio-optimizer-lab">Portfolio Optimizer Lab</a> — optimization for decision support</li>
-<li><a href="https://github.com/tyagiprerna0808/treasury-forecast-lab">Treasury Forecast Lab</a> — time-series forecasting workflow</li>
-<li><a href="https://github.com/tyagiprerna0808/fraud-detection-monitor">Fraud Detection Monitor</a> — production-style fraud API</li>
-<li><a href="https://github.com/tyagiprerna0808/fintech-github-showcase/tree/main/personalized-marketplace-search">Personalized Marketplace Search</a> — hybrid retrieval + reranking</li>
-</ul>
+<section id="currently-learning-in-public" class="level2">
+<h2 class="anchored" data-anchor-id="currently-learning-in-public">Currently learning in public</h2>
+<p>A long-form series on what’s actually inside the production AI stack — embeddings, retrieval, evals, agents, fine-tuning. Each post takes weeks because every claim is paired with running from-scratch code and measured experiments. The point isn’t to be the first to write about these topics — it’s to be honest about what depth actually costs. Read more in the <a href="./index.html">blog</a>.</p>
+</section>
+<section id="reach-out" class="level2">
+<h2 class="anchored" data-anchor-id="reach-out">Reach out</h2>
+<p>Email best for substantive things. DMs open on <a href="https://x.com/prernaaa0808">X</a> and <a href="https://www.linkedin.com/in/prerna-tyagi-/">LinkedIn</a> for short threads. GitHub for code.</p>
 
 
 </section>
-</main></div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
