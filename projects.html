@@ -94,15 +94,15 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
-<span class="menu-text">Projects</span></a>
+<span class="menu-text">Writing</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://github.com/tyagiprerna0808/ml-applied-depth/tree/main/notes"> 
 <span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+<span class="menu-text">Builds</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -133,36 +133,41 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="section-head">
 <p class="section-crumb">
-projects/
+~/builds/
 </p>
-<section id="things-ive-built" class="level1">
-<h1>Things I’ve Built</h1>
+<section id="builds" class="level1">
+<h1>Builds</h1>
 <p class="section-subtitle">
-Shipped products and open-source case studies, ranging from a live e-commerce platform to applied ML pipelines.
+Shipped products and applied-ML case studies. Each one optimises for engineering discipline — APIs, deployment, evaluation, monitoring — alongside the model work.
 </p>
 </section>
 </div>
 <div class="project-list">
 <a class="project-card" href="https://github.com/tyagiprerna0808/pragya-nursery-platform" target="_blank" rel="noopener">
-<div class="project-tags">
-<pre><code>&lt;span class="project-tag"&gt;Shipped&lt;/span&gt;
-&lt;span class="project-tag"&gt;E-commerce&lt;/span&gt;
-&lt;span class="project-tag"&gt;Capacitor&lt;/span&gt;
-&lt;span class="project-tag"&gt;Paytm&lt;/span&gt;</code></pre>
+<div class="project-card-head">
+<pre><code>&lt;div class="project-tags"&gt;
+  &lt;span class="project-tag"&gt;e-commerce&lt;/span&gt;
+  &lt;span class="project-tag"&gt;capacitor&lt;/span&gt;
+  &lt;span class="project-tag"&gt;paytm&lt;/span&gt;
+  &lt;span class="project-tag"&gt;vercel + render&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class="status-badge status-shipped"&gt;shipped&lt;/span&gt;</code></pre>
 </div>
 <h3 class="project-title anchored">
 Pragya Nursery — live ordering platform
 </h3>
 <p class="project-description">
-A real ordering platform for my father’s plant nursery in Greater Noida. Vercel website + Render API + Capacitor Android app, with Paytm payments, geofenced delivery within 15 km, persistent order storage, and CI-deployed on every push to master. Live customers, real revenue.
+A real ordering platform for my father’s plant nursery in Greater Noida. Vercel website, Render API, Capacitor Android app, Paytm payments, geofenced delivery within 15 km, persistent order storage, CI-deployed on every push to master. Live customers, real revenue.
 </p>
 </a><p><a class="project-card" href="https://github.com/tyagiprerna0808/pragya-nursery-platform" target="_blank" rel="noopener"></a></p>
 <a class="project-card" href="https://github.com/tyagiprerna0808/ml-applied-depth" target="_blank" rel="noopener">
-<div class="project-tags">
-<pre><code>&lt;span class="project-tag"&gt;Work-in-progress&lt;/span&gt;
-&lt;span class="project-tag"&gt;Embeddings&lt;/span&gt;
-&lt;span class="project-tag"&gt;Retrieval&lt;/span&gt;
-&lt;span class="project-tag"&gt;Quarto&lt;/span&gt;</code></pre>
+<div class="project-card-head">
+<pre><code>&lt;div class="project-tags"&gt;
+  &lt;span class="project-tag"&gt;embeddings&lt;/span&gt;
+  &lt;span class="project-tag"&gt;retrieval&lt;/span&gt;
+  &lt;span class="project-tag"&gt;quarto&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class="status-badge status-wip"&gt;wip&lt;/span&gt;</code></pre>
 </div>
 <h3 class="project-title anchored">
 ml-applied-depth — companion code for this blog
@@ -172,10 +177,13 @@ From-scratch implementations of the building blocks of modern AI products, paire
 </p>
 </a><p><a class="project-card" href="https://github.com/tyagiprerna0808/ml-applied-depth" target="_blank" rel="noopener"></a></p>
 <a class="project-card" href="https://github.com/tyagiprerna0808/credit-risk-studio" target="_blank" rel="noopener">
-<div class="project-tags">
-<pre><code>&lt;span class="project-tag"&gt;ML Pipeline&lt;/span&gt;
-&lt;span class="project-tag"&gt;Fintech&lt;/span&gt;
-&lt;span class="project-tag"&gt;Dashboards&lt;/span&gt;</code></pre>
+<div class="project-card-head">
+<pre><code>&lt;div class="project-tags"&gt;
+  &lt;span class="project-tag"&gt;ml pipeline&lt;/span&gt;
+  &lt;span class="project-tag"&gt;fintech&lt;/span&gt;
+  &lt;span class="project-tag"&gt;dashboards&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class="status-badge status-shipped"&gt;shipped&lt;/span&gt;</code></pre>
 </div>
 <h3 class="project-title anchored">
 Credit Risk Studio
@@ -185,10 +193,13 @@ End-to-end ML pipeline case study with feature engineering, model selection, cal
 </p>
 </a><p><a class="project-card" href="https://github.com/tyagiprerna0808/credit-risk-studio" target="_blank" rel="noopener"></a></p>
 <a class="project-card" href="https://github.com/tyagiprerna0808/fraud-detection-monitor" target="_blank" rel="noopener">
-<div class="project-tags">
-<pre><code>&lt;span class="project-tag"&gt;Production API&lt;/span&gt;
-&lt;span class="project-tag"&gt;Docker&lt;/span&gt;
-&lt;span class="project-tag"&gt;Fraud&lt;/span&gt;</code></pre>
+<div class="project-card-head">
+<pre><code>&lt;div class="project-tags"&gt;
+  &lt;span class="project-tag"&gt;production api&lt;/span&gt;
+  &lt;span class="project-tag"&gt;docker&lt;/span&gt;
+  &lt;span class="project-tag"&gt;fraud&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class="status-badge status-shipped"&gt;shipped&lt;/span&gt;</code></pre>
 </div>
 <h3 class="project-title anchored">
 Fraud Detection Monitor
@@ -198,10 +209,13 @@ Production-style fraud API with health/readiness endpoints, Docker workflow, bas
 </p>
 </a><p><a class="project-card" href="https://github.com/tyagiprerna0808/fraud-detection-monitor" target="_blank" rel="noopener"></a></p>
 <a class="project-card" href="https://github.com/tyagiprerna0808/fintech-github-showcase/tree/main/personalized-marketplace-search" target="_blank" rel="noopener">
-<div class="project-tags">
-<pre><code>&lt;span class="project-tag"&gt;Retrieval&lt;/span&gt;
-&lt;span class="project-tag"&gt;Ranking&lt;/span&gt;
-&lt;span class="project-tag"&gt;Hybrid Search&lt;/span&gt;</code></pre>
+<div class="project-card-head">
+<pre><code>&lt;div class="project-tags"&gt;
+  &lt;span class="project-tag"&gt;retrieval&lt;/span&gt;
+  &lt;span class="project-tag"&gt;ranking&lt;/span&gt;
+  &lt;span class="project-tag"&gt;hybrid search&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class="status-badge status-shipped"&gt;shipped&lt;/span&gt;</code></pre>
 </div>
 <h3 class="project-title anchored">
 Personalized Marketplace Search
@@ -211,9 +225,12 @@ Hybrid retrieval (sparse + dense) with cross-encoder reranking, offline metrics,
 </p>
 </a><p><a class="project-card" href="https://github.com/tyagiprerna0808/fintech-github-showcase/tree/main/personalized-marketplace-search" target="_blank" rel="noopener"></a></p>
 <a class="project-card" href="https://github.com/tyagiprerna0808/treasury-forecast-lab" target="_blank" rel="noopener">
-<div class="project-tags">
-<pre><code>&lt;span class="project-tag"&gt;Time Series&lt;/span&gt;
-&lt;span class="project-tag"&gt;Forecasting&lt;/span&gt;</code></pre>
+<div class="project-card-head">
+<pre><code>&lt;div class="project-tags"&gt;
+  &lt;span class="project-tag"&gt;time series&lt;/span&gt;
+  &lt;span class="project-tag"&gt;forecasting&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class="status-badge status-shipped"&gt;shipped&lt;/span&gt;</code></pre>
 </div>
 <h3 class="project-title anchored">
 Treasury Forecast Lab
@@ -223,9 +240,12 @@ Forecasting workflow demonstrating time-series modeling, evaluation, and practic
 </p>
 </a><p><a class="project-card" href="https://github.com/tyagiprerna0808/treasury-forecast-lab" target="_blank" rel="noopener"></a></p>
 <a class="project-card" href="https://github.com/tyagiprerna0808/portfolio-optimizer-lab" target="_blank" rel="noopener">
-<div class="project-tags">
-<pre><code>&lt;span class="project-tag"&gt;Optimization&lt;/span&gt;
-&lt;span class="project-tag"&gt;Quantitative&lt;/span&gt;</code></pre>
+<div class="project-card-head">
+<pre><code>&lt;div class="project-tags"&gt;
+  &lt;span class="project-tag"&gt;optimization&lt;/span&gt;
+  &lt;span class="project-tag"&gt;quantitative&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class="status-badge status-shipped"&gt;shipped&lt;/span&gt;</code></pre>
 </div>
 <h3 class="project-title anchored">
 Portfolio Optimizer Lab
@@ -645,6 +665,38 @@ Optimization and quantitative modeling case study for decision support, with rep
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Prerna Tyagi. Built in public.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tyagiprerna0808">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/prerna-tyagi-/">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://x.com/prernaaa0808">
+      <i class="bi bi-twitter-x" role="img" aria-label="X">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
