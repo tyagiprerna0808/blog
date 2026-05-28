@@ -6,22 +6,36 @@ project:
 
 website:
   title: "Prerna Tyagi"
-  description: "Applied AI/ML engineering — from-scratch implementations and experiments"
+  description: "Applied AI/ML engineering — implementations, experiments, builds"
   site-url: https://tyagiprerna0808.github.io/blog
   navbar:
     pinned: true
     right:
       - href: index.qmd
-        text: Blog
-      - href: projects.qmd
-        text: Projects
+        text: Writing
       - text: Notes
         href: https://github.com/tyagiprerna0808/ml-applied-depth/tree/main/notes
+      - href: projects.qmd
+        text: Builds
       - href: about.qmd
         text: About
       - icon: github
         href: https://github.com/tyagiprerna0808
         aria-label: GitHub
+  page-footer:
+    border: false
+    left: |
+      © 2026 Prerna Tyagi. Built in public.
+    right:
+      - icon: github
+        href: https://github.com/tyagiprerna0808
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/prerna-tyagi-/
+        aria-label: LinkedIn
+      - icon: twitter-x
+        href: https://x.com/prernaaa0808
+        aria-label: X
 
 format:
   html:

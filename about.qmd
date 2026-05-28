@@ -14,10 +14,10 @@ toc: false
   </div>
 
   <div class="about-intro">
-    <p class="section-crumb">about me</p>
+    <p class="section-crumb">~/about/</p>
     <h1 class="about-name">Prerna Tyagi</h1>
-    <p class="about-tagline">AI/ML engineer building product-grade systems. Currently moving from model-focused data science into <strong>applied AI engineering</strong>.</p>
-    <p class="about-bio">Self-taught the production half of the stack — APIs, deployment, observability, evals — while shipping a real e-commerce product for my father's plant nursery, and writing a long-form series implementing the building blocks of modern AI from scratch.</p>
+    <p class="about-tagline">AI/ML engineer who <strong>ships</strong>. Currently turning a model-focused data-science background into applied AI engineering for production systems.</p>
+    <p class="about-bio">Self-taught the production half of the stack — APIs, deployment, observability, evals — by building a real e-commerce platform for my father's plant nursery and writing a long-form series implementing the building blocks of modern AI from scratch.</p>
 
     <div class="about-links">
       <a href="https://github.com/tyagiprerna0808" target="_blank" rel="noopener" aria-label="GitHub">
@@ -38,15 +38,15 @@ toc: false
 
 ## The work
 
-I build AI/ML products end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation. The portfolio split:
+I build AI/ML products end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation. The portfolio breaks into three lanes:
 
 - **Shipped product** — [Pragya Nursery](https://github.com/tyagiprerna0808/pragya-nursery-platform), a real e-commerce platform live for my father's plant nursery in Greater Noida. Vercel + Render + Capacitor + Paytm.
-- **Open-source case studies** — [Credit Risk Studio](https://github.com/tyagiprerna0808/credit-risk-studio), [Fraud Detection Monitor](https://github.com/tyagiprerna0808/fraud-detection-monitor), [Personalized Marketplace Search](https://github.com/tyagiprerna0808/fintech-github-showcase/tree/main/personalized-marketplace-search), and others — each built with production discipline.
-- **This blog series** — implementing modern AI building blocks from scratch, paired with companion notebooks in [ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth).
+- **Applied case studies** — [Credit Risk Studio](https://github.com/tyagiprerna0808/credit-risk-studio), [Fraud Detection Monitor](https://github.com/tyagiprerna0808/fraud-detection-monitor), [Personalized Marketplace Search](https://github.com/tyagiprerna0808/fintech-github-showcase/tree/main/personalized-marketplace-search), and others — each built with production discipline rather than notebook polish.
+- **This blog** — implementing the modern AI building blocks from scratch, paired with companion notebooks in [ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth).
 
 ## Currently learning in public
 
-A long-form series on what's actually inside the production AI stack — embeddings, retrieval, evals, agents, fine-tuning. Each post takes weeks because every claim is paired with running from-scratch code and measured experiments. The point isn't to be the first to write about these topics — it's to be honest about what depth actually costs. Read more in the [blog](index.qmd).
+A long-form series on what's actually inside the production AI stack — embeddings, retrieval, evals, agents, fine-tuning. Each post takes weeks because every claim is paired with running from-scratch code and measured experiments. The point isn't to be the first to write about these topics — it's to be honest about what depth actually costs. Read it in [writing](index.qmd).
 
 ## Reach out
 

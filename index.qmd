@@ -13,9 +13,9 @@ toc: false
 ---
 
 ::: {.section-head}
-<p class="section-crumb">blog/</p>
+<p class="section-crumb">~/writing/</p>
 
-# Articles & Deep Dives
+# Field notes
 
-<p class="section-subtitle">From-scratch implementations of the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning. Each post pairs explanation with running code and measured experiments.</p>
+<p class="section-subtitle">Long-form posts working through the production AI stack — embeddings, retrieval, evals, agents, fine-tuning — one component at a time, with running code and measured numbers. Each post is paired with a companion notebook in [ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth).</p>
 :::
