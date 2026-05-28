@@ -9,9 +9,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Field notes",
+    "title": "Building Blocks of Modern AI",
     "section": "",
-    "text": "~/writing/\n\n\nField notes\n\nLong-form posts working through the production AI stack — embeddings, retrieval, evals, agents, fine-tuning — one component at a time, with running code and measured numbers. Each post is paired with a companion notebook in ml-applied-depth.\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings & Vector Search Internals\n\n\n\nretrieval\n\nembeddings\n\nann\n\nwork-in-progress\n\n\n\nBrute-force, IVF, PQ, HNSW — implemented and measured from scratch. Work in progress.\n\n\n\n\n\nMay 28, 2026\n\n4 min\n\n\n\n\nNo matching items"
+    "text": "~/series/\n\n\nBuilding Blocks of Modern AI\n\nA code-first journey through what’s inside every modern AI system — embeddings, tokenization, attention, positional encoding, fine-tuning, retrieval, agents. Each component implemented from scratch and measured on real data. Companion code in ml-applied-depth.\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings & Vector Search Internals\n\n\n\nretrieval\n\nembeddings\n\nann\n\nwork-in-progress\n\n\n\nBrute-force, IVF, PQ, HNSW — implemented and measured from scratch. Work in progress.\n\n\n\n\n\nMay 28, 2026\n\n4 min\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
