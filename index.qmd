@@ -1,6 +1,4 @@
 ---
-title: "Prerna Tyagi"
-subtitle: "Applied AI/ML engineering — from-scratch implementations and experiments"
 listing:
   contents: posts
   type: default
@@ -14,6 +12,18 @@ title-block-banner: false
 toc: false
 ---
 
-A series on what's inside the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning — implemented from scratch and measured on real corpora. Each post is paired with a companion notebook in [ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth).
+::: {.hero-block}
 
-Inspired by [Tanul Singh's gradient-descent-through-transformers series](https://tanulsingh.github.io/blog).
+# Prerna Tyagi
+
+<p class="role">Applied AI/ML engineering · India</p>
+
+<p class="terminal-tag">// from-scratch implementations · measured on real corpora</p>
+
+A series on what's inside the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning. Each post is paired with a companion notebook in [ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth).
+
+:::
+
+<hr/>
+
+<div class="landing-section-heading">Writing</div>

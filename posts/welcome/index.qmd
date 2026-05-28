@@ -1,8 +1,0 @@
----
-title: "Welcome (placeholder)"
-description: "Site is live; first real post is in progress."
-date: "2026-05-27"
-draft: true
----
-
-This is a placeholder so the site builds with the listing in place. The first real post — *Embeddings & Vector Search Internals* — is being written. Delete this file before publishing.

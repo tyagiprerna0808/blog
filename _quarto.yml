@@ -19,19 +19,20 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: darkly
     css: styles.css
-    toc: true
-    toc-depth: 3
+    toc: false
     code-copy: true
     code-overflow: wrap
     code-link: true
-    highlight-style: github
-    fontsize: 1.05rem
-    linestretch: 1.65
+    highlight-style: github-dark
     smooth-scroll: true
     anchor-sections: true
     link-external-newwindow: true
+    fontsize: 1rem
+    linestretch: 1.65
+    mainfont: "Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+    monofont: "JetBrains Mono, ui-monospace, monospace"
 
 execute:
   freeze: auto

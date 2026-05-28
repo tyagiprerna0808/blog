@@ -13,6 +13,7 @@ about:
     - icon: twitter-x
       text: X
       href: https://x.com/prernaaa0808
+toc: false
 ---
 
 Prerna Tyagi — AI/ML engineer. I build product-grade AI/ML systems end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation.

@@ -4,11 +4,12 @@ description: "Brute-force, IVF, PQ, HNSW — implemented and measured from scrat
 author: "Prerna Tyagi"
 date: "2026-05-28"
 date-modified: last-modified
-categories: [retrieval, embeddings, ANN, work-in-progress]
+categories: [retrieval, embeddings, ann, work-in-progress]
 reading-time: true
-toc: true
-toc-depth: 3
+toc: false
 ---
+
+<p class="breadcrumb-mono">[← writing](../../)</p>
 
 ::: {.callout-note appearance="simple"}
 **This post is being written in public, section by section, as I work through the material.** Sections marked ✅ have running code, measured numbers, and a real result in the companion repo. Sections marked ⏳ are not done yet.
