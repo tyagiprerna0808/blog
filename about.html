@@ -27,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -41,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cfca05be01d3419732a5879cfde5cf21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d843b0fbec8b700b69da2befa0b3c0e4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,12 +68,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Blog</span></a>
+<span class="menu-text">Writing</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
@@ -115,42 +115,63 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+  <ul>
+  <li><a href="#shipped" id="toc-shipped" class="nav-link active" data-scroll-target="#shipped">Shipped</a></li>
+  <li><a href="#open-source" id="toc-open-source" class="nav-link" data-scroll-target="#open-source">Open-source</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-jolla">
- <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-trestles">
+  <div class="about-entity">
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">About</h1>
 </div>
 <div class="quarto-title-meta">
   </div>
-</header><main class="content" id="quarto-document-content">
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Draft. Replace this with your own bio before publishing.</p>
-</div>
-</div>
-<p>I’m Prerna Tyagi. Data scientist moving into applied AI/ML engineering.</p>
-<p>Each post on this site is paired with a from-scratch implementation in <a href="https://github.com/tyagiprerna0808/ml-applied-depth">ml-applied-depth</a> and an assignment notebook so a reader can build the same thing themselves before reading the worked version. Inspired by <a href="https://tanulsingh.github.io/blog">Tanul Singh’s gradient-descent-through-transformers series</a>.</p>
-<p>My main shipped product is <strong>Pragya Nursery</strong> — a real ordering platform I built for my father’s nursery in Greater Noida.</p>
-
-
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
+</header>
+    <div class="about-links">
   <a href="https://github.com/tyagiprerna0808" class="about-link" rel="" target="">
     <i class="bi bi-github"></i>
      <span class="about-link-text">GitHub</span>
   </a>
+  <a href="https://www.linkedin.com/in/prerna-tyagi-/" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">LinkedIn</span>
+  </a>
+  <a href="https://x.com/prernaaa0808" class="about-link" rel="" target="">
+    <i class="bi bi-twitter-x"></i>
+     <span class="about-link-text">X</span>
+  </a>
 </div>
+  </div>
+  <div class="about-contents"><main class="content" id="quarto-document-content">
+
+<p>Prerna Tyagi — AI/ML engineer. I build product-grade AI/ML systems end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation.</p>
+<p>This blog is the long-form companion to my work. Each post pairs an explanation with a from-scratch implementation in <a href="https://github.com/tyagiprerna0808/ml-applied-depth">ml-applied-depth</a>, plus an assignment notebook so a reader can build the same thing themselves before reading the worked version.</p>
+<section id="shipped" class="level2">
+<h2 data-anchor-id="shipped">Shipped</h2>
+<ul>
+<li><strong><a href="https://github.com/tyagiprerna0808/pragya-nursery-platform">Pragya Nursery</a></strong> — ordering platform for my father’s nursery in Greater Noida. Vercel website + Render API + Capacitor Android app + Paytm payments.</li>
+</ul>
+</section>
+<section id="open-source" class="level2">
+<h2 data-anchor-id="open-source">Open-source</h2>
+<ul>
+<li><a href="https://github.com/tyagiprerna0808/credit-risk-studio">Credit Risk Studio</a> — end-to-end ML pipeline case study</li>
+<li><a href="https://github.com/tyagiprerna0808/portfolio-optimizer-lab">Portfolio Optimizer Lab</a> — optimization for decision support</li>
+<li><a href="https://github.com/tyagiprerna0808/treasury-forecast-lab">Treasury Forecast Lab</a> — time-series forecasting workflow</li>
+<li><a href="https://github.com/tyagiprerna0808/fraud-detection-monitor">Fraud Detection Monitor</a> — production-style fraud API</li>
+<li><a href="https://github.com/tyagiprerna0808/fintech-github-showcase/tree/main/personalized-marketplace-search">Personalized Marketplace Search</a> — hybrid retrieval + reranking</li>
+</ul>
+
+
+</section>
+</main></div>
 </div>
  <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -233,6 +254,11 @@ Note
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -551,4 +577,5 @@ Note
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

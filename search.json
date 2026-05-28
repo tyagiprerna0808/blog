@@ -1,16 +1,86 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Note\n\n\n\nDraft. Replace this with your own bio before publishing.\n\n\nI’m Prerna Tyagi. Data scientist moving into applied AI/ML engineering.\nEach post on this site is paired with a from-scratch implementation in ml-applied-depth and an assignment notebook so a reader can build the same thing themselves before reading the worked version. Inspired by Tanul Singh’s gradient-descent-through-transformers series.\nMy main shipped product is Pragya Nursery — a real ordering platform I built for my father’s nursery in Greater Noida."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Prerna Tyagi",
     "section": "",
-    "text": "No matching items"
+    "text": "A series on what’s inside the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning — implemented from scratch and measured on real corpora. Each post is paired with a companion notebook in ml-applied-depth.\nInspired by Tanul Singh’s gradient-descent-through-transformers series.\n\n\n\n\n\n\n\n\n\nEmbeddings & Vector Search Internals\n\n\n\nretrieval\n\nembeddings\n\nANN\n\nwork-in-progress\n\n\n\nBrute-force, IVF, PQ, HNSW — implemented and measured from scratch. Work in progress.\n\n\n\n\n\nMay 28, 2026\n\n4 min\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Prerna Tyagi — AI/ML engineer. I build product-grade AI/ML systems end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation.\nThis blog is the long-form companion to my work. Each post pairs an explanation with a from-scratch implementation in ml-applied-depth, plus an assignment notebook so a reader can build the same thing themselves before reading the worked version."
+  },
+  {
+    "objectID": "about.html#shipped",
+    "href": "about.html#shipped",
+    "title": "About",
+    "section": "Shipped",
+    "text": "Shipped\n\nPragya Nursery — ordering platform for my father’s nursery in Greater Noida. Vercel website + Render API + Capacitor Android app + Paytm payments."
+  },
+  {
+    "objectID": "about.html#open-source",
+    "href": "about.html#open-source",
+    "title": "About",
+    "section": "Open-source",
+    "text": "Open-source\n\nCredit Risk Studio — end-to-end ML pipeline case study\nPortfolio Optimizer Lab — optimization for decision support\nTreasury Forecast Lab — time-series forecasting workflow\nFraud Detection Monitor — production-style fraud API\nPersonalized Marketplace Search — hybrid retrieval + reranking"
+  },
+  {
+    "objectID": "posts/01-embeddings-vector-search/index.html",
+    "href": "posts/01-embeddings-vector-search/index.html",
+    "title": "Embeddings & Vector Search Internals",
+    "section": "",
+    "text": "This post is being written in public, section by section, as I work through the material. Sections marked ✅ have running code, measured numbers, and a real result in the companion repo. Sections marked ⏳ are not done yet.\nCompanion code: github.com/tyagiprerna0808/ml-applied-depth · Last update: 2026-05-28."
+  },
+  {
+    "objectID": "posts/01-embeddings-vector-search/index.html#the-question",
+    "href": "posts/01-embeddings-vector-search/index.html#the-question",
+    "title": "Embeddings & Vector Search Internals",
+    "section": "The question",
+    "text": "The question\n\nGiven a corpus of millions of documents and a query, return the top-k nearest neighbors in under 10 ms with recall@10 &gt; 0.95, on a laptop. How does that actually work?"
+  },
+  {
+    "objectID": "posts/01-embeddings-vector-search/index.html#roadmap",
+    "href": "posts/01-embeddings-vector-search/index.html#roadmap",
+    "title": "Embeddings & Vector Search Internals",
+    "section": "Roadmap",
+    "text": "Roadmap\n\n✅ What an embedding is (first taste)\n⏳ Similarity metrics — cosine vs dot vs L2\n✅ Brute-force baseline on a real corpus\n⏳ The curse of dimensionality\n⏳ IVF — Inverted File Index\n⏳ PQ — Product Quantization\n⏳ HNSW — Hierarchical Navigable Small World\n⏳ Head-to-head comparison\n⏳ Production considerations"
+  },
+  {
+    "objectID": "posts/01-embeddings-vector-search/index.html#a-first-taste",
+    "href": "posts/01-embeddings-vector-search/index.html#a-first-taste",
+    "title": "Embeddings & Vector Search Internals",
+    "section": "✅ A first taste",
+    "text": "✅ A first taste\nCode: blog/01-embeddings/hello_embeddings.py\nFour sentences — two about gardening, two about finance. The model (sentence-transformers/all-MiniLM-L6-v2, 384-d) never sees the topic labels.\n  0.622   'I love plants'              vs  'Gardening is fun'             ← gardening\n  0.149   'The stock market crashed'   vs  'Bonds and treasury yields'    ← finance\n  0.021   'I love plants'              vs  'The stock market crashed'\n  0.016   'I love plants'              vs  'Bonds and treasury yields'\n  0.015   'Gardening is fun'           vs  'The stock market crashed'\n  0.005   'Gardening is fun'           vs  'Bonds and treasury yields'\nCross-pairs score 30× to 120× lower than the same-topic pairs.\nThe gardening pair (0.62) outscores the finance pair (0.15) — both topical neighbors, but “I love plants” and “Gardening is fun” are closer in sentiment-and-meaning than “stock market crashed” (a panic event) and “bonds and treasury yields” (fixed-income instruments). Embeddings reflect meaning, not just topic labels."
+  },
+  {
+    "objectID": "posts/01-embeddings-vector-search/index.html#brute-force-search-on-5000-news-passages",
+    "href": "posts/01-embeddings-vector-search/index.html#brute-force-search-on-5000-news-passages",
+    "title": "Embeddings & Vector Search Internals",
+    "section": "✅ Brute-force search on 5,000 news passages",
+    "text": "✅ Brute-force search on 5,000 news passages\nCode: blog/01-embeddings/search_corpus.py\nCorpus: 5,000 passages from fancyzhx/ag_news. Embeddings cached to disk after the first run. Top-k via one matmul per query against the L2-normalized corpus matrix.\nSample query: “tennis player wins grand slam”. Top result:\n\nRoddick escapes, but not Federer. ATHENS, Greece. Andy Roddick #39;s biggest obstacle to winning the gold medal was Roger Federer…\n\nThe phrase “grand slam” does not appear in the passage. The embedding placed it as the closest match because Roddick + Federer + Olympics + gold medal sits at the right point in tennis-meaning-space.\nAnother query: “earnings report from a tech company”. The third match was Limited Brands — a clothing retailer with earnings reports. The embedding weighted earnings report heavily and partially missed tech company; when a query bundles multiple concepts, the embedding averages them and one concept can dominate. This is exactly why production RAG adds reranking, query rewriting, and hybrid sparse+dense search.\nSteady-state search latency at N=5,000: ~0.7 ms per query (single CPU core)."
+  },
+  {
+    "objectID": "posts/01-embeddings-vector-search/index.html#latency-scaling-when-brute-force-breaks",
+    "href": "posts/01-embeddings-vector-search/index.html#latency-scaling-when-brute-force-breaks",
+    "title": "Embeddings & Vector Search Internals",
+    "section": "✅ Latency scaling — when brute force breaks",
+    "text": "✅ Latency scaling — when brute force breaks\nCode: blog/01-embeddings/latency_scaling.py\nMeasured: K=10, 50 queries per N, 384-d vectors, single CPU core (Intel i5-9300H), L2-normalized matmul.\n\n\n\nN\nmean (ms)\np95 (ms)\n\n\n\n\n100\n0.017\n0.021\n\n\n500\n0.033\n0.036\n\n\n1,000\n0.052\n0.067\n\n\n2,500\n0.279\n0.440\n\n\n5,000\n0.605\n0.857\n\n\n\n\n\n\nBrute-force top-10 latency vs corpus size N (5K corpus, 384-d, CPU).\n\n\nPast N ≈ 1,000 the curve is linear: ~121 ns per document. Linear extrapolation:\n\n\n\nLatency budget\nBrute-force ceiling\n\n\n\n\n10 ms\n~83,000 docs\n\n\n100 ms\n~830,000 docs\n\n\n1 s\n~8.3 million docs\n\n\n\nFor reference: English Wikipedia is ≈ 6 million articles, MS MARCO is ≈ 8.8 million passages. Brute force can’t hit a 10 ms production budget on either; HNSW, IVF, and PQ exist to climb past this wall."
+  },
+  {
+    "objectID": "posts/01-embeddings-vector-search/index.html#coming-next",
+    "href": "posts/01-embeddings-vector-search/index.html#coming-next",
+    "title": "Embeddings & Vector Search Internals",
+    "section": "⏳ Coming next",
+    "text": "⏳ Coming next\nHNSW from scratch, on the same 5K corpus. Target: ~100× latency cut at ≥95% recall vs. the brute-force baseline above, with a side-by-side plot."
+  },
+  {
+    "objectID": "posts/01-embeddings-vector-search/index.html#working-notes",
+    "href": "posts/01-embeddings-vector-search/index.html#working-notes",
+    "title": "Embeddings & Vector Search Internals",
+    "section": "Working notes",
+    "text": "Working notes\nSession-1 raw notes (warts and all): notes/post-01-session-1.md. Tutor review of those notes — including the math errors I caught: notes/post-01-session-1-review.md."
   }
 ]

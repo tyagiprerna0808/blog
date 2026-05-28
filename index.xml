@@ -10,6 +10,168 @@
 <atom:link href="https://tyagiprerna0808.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Applied AI/ML engineering — from-scratch implementations and experiments</description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Wed, 27 May 2026 18:00:32 GMT</lastBuildDate>
+<lastBuildDate>Wed, 27 May 2026 18:30:00 GMT</lastBuildDate>
+<item>
+  <title>Embeddings &amp; Vector Search Internals</title>
+  <dc:creator>Prerna Tyagi</dc:creator>
+  <link>https://tyagiprerna0808.github.io/blog/posts/01-embeddings-vector-search/</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>This post is being written in public, section by section, as I work through the material.</strong> Sections marked ✅ have running code, measured numbers, and a real result in the companion repo. Sections marked ⏳ are not done yet.</p>
+<p>Companion code: <a href="https://github.com/tyagiprerna0808/ml-applied-depth">github.com/tyagiprerna0808/ml-applied-depth</a> · Last update: 2026-05-28.</p>
+</div>
+</div>
+</div>
+<section id="the-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-question">The question</h2>
+<blockquote class="blockquote">
+<p>Given a corpus of millions of documents and a query, return the top-k nearest neighbors in under 10 ms with recall@10 &gt; 0.95, on a laptop. How does that actually work?</p>
+</blockquote>
+</section>
+<section id="roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="roadmap">Roadmap</h2>
+<ol type="1">
+<li>✅ What an embedding is (first taste)</li>
+<li>⏳ Similarity metrics — cosine vs dot vs L2</li>
+<li>✅ Brute-force baseline on a real corpus</li>
+<li>⏳ The curse of dimensionality</li>
+<li>⏳ IVF — Inverted File Index</li>
+<li>⏳ PQ — Product Quantization</li>
+<li>⏳ HNSW — Hierarchical Navigable Small World</li>
+<li>⏳ Head-to-head comparison</li>
+<li>⏳ Production considerations</li>
+</ol>
+<hr>
+</section>
+<section id="a-first-taste" class="level2">
+<h2 class="anchored" data-anchor-id="a-first-taste">✅ A first taste</h2>
+<p>Code: <a href="https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/blog/01-embeddings/hello_embeddings.py"><code>blog/01-embeddings/hello_embeddings.py</code></a></p>
+<p>Four sentences — two about gardening, two about finance. The model (<code>sentence-transformers/all-MiniLM-L6-v2</code>, 384-d) never sees the topic labels.</p>
+<pre><code>  0.622   'I love plants'              vs  'Gardening is fun'             ← gardening
+  0.149   'The stock market crashed'   vs  'Bonds and treasury yields'    ← finance
+  0.021   'I love plants'              vs  'The stock market crashed'
+  0.016   'I love plants'              vs  'Bonds and treasury yields'
+  0.015   'Gardening is fun'           vs  'The stock market crashed'
+  0.005   'Gardening is fun'           vs  'Bonds and treasury yields'</code></pre>
+<p>Cross-pairs score 30× to 120× lower than the same-topic pairs.</p>
+<p>The gardening pair (0.62) outscores the finance pair (0.15) — both topical neighbors, but <em>“I love plants”</em> and <em>“Gardening is fun”</em> are closer in sentiment-and-meaning than <em>“stock market crashed”</em> (a panic event) and <em>“bonds and treasury yields”</em> (fixed-income instruments). Embeddings reflect meaning, not just topic labels.</p>
+<hr>
+</section>
+<section id="brute-force-search-on-5000-news-passages" class="level2">
+<h2 class="anchored" data-anchor-id="brute-force-search-on-5000-news-passages">✅ Brute-force search on 5,000 news passages</h2>
+<p>Code: <a href="https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/blog/01-embeddings/search_corpus.py"><code>blog/01-embeddings/search_corpus.py</code></a></p>
+<p>Corpus: 5,000 passages from <code>fancyzhx/ag_news</code>. Embeddings cached to disk after the first run. Top-k via one matmul per query against the L2-normalized corpus matrix.</p>
+<p>Sample query: <strong>“tennis player wins grand slam”</strong>. Top result:</p>
+<blockquote class="blockquote">
+<p>Roddick escapes, but not Federer. ATHENS, Greece. Andy Roddick #39;s biggest obstacle to winning the gold medal was Roger Federer…</p>
+</blockquote>
+<p>The phrase “grand slam” does not appear in the passage. The embedding placed it as the closest match because Roddick + Federer + Olympics + gold medal sits at the right point in tennis-meaning-space.</p>
+<p>Another query: <strong>“earnings report from a tech company”</strong>. The third match was <em>Limited Brands</em> — a clothing retailer with earnings reports. The embedding weighted <em>earnings report</em> heavily and partially missed <em>tech company</em>; when a query bundles multiple concepts, the embedding averages them and one concept can dominate. This is exactly why production RAG adds reranking, query rewriting, and hybrid sparse+dense search.</p>
+<p>Steady-state search latency at N=5,000: <strong>~0.7 ms</strong> per query (single CPU core).</p>
+<hr>
+</section>
+<section id="latency-scaling-when-brute-force-breaks" class="level2">
+<h2 class="anchored" data-anchor-id="latency-scaling-when-brute-force-breaks">✅ Latency scaling — when brute force breaks</h2>
+<p>Code: <a href="https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/blog/01-embeddings/latency_scaling.py"><code>blog/01-embeddings/latency_scaling.py</code></a></p>
+<p>Measured: K=10, 50 queries per N, 384-d vectors, single CPU core (Intel i5-9300H), L2-normalized matmul.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">mean (ms)</th>
+<th style="text-align: right;">p95 (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0.017</td>
+<td style="text-align: right;">0.021</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">0.033</td>
+<td style="text-align: right;">0.036</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">0.052</td>
+<td style="text-align: right;">0.067</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2,500</td>
+<td style="text-align: right;">0.279</td>
+<td style="text-align: right;">0.440</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5,000</td>
+<td style="text-align: right;">0.605</td>
+<td style="text-align: right;">0.857</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/tyagiprerna0808/ml-applied-depth/main/blog/01-embeddings/results/brute_force_latency.png" class="img-fluid figure-img"></p>
+<figcaption>Brute-force top-10 latency vs corpus size N (5K corpus, 384-d, CPU).</figcaption>
+</figure>
+</div>
+<p>Past N ≈ 1,000 the curve is linear: ~121 ns per document. Linear extrapolation:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Latency budget</th>
+<th style="text-align: right;">Brute-force ceiling</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10 ms</td>
+<td style="text-align: right;">~83,000 docs</td>
+</tr>
+<tr class="even">
+<td>100 ms</td>
+<td style="text-align: right;">~830,000 docs</td>
+</tr>
+<tr class="odd">
+<td>1 s</td>
+<td style="text-align: right;">~8.3 million docs</td>
+</tr>
+</tbody>
+</table>
+<p>For reference: English Wikipedia is ≈ 6 million articles, MS MARCO is ≈ 8.8 million passages. Brute force can’t hit a 10 ms production budget on either; HNSW, IVF, and PQ exist to climb past this wall.</p>
+<hr>
+</section>
+<section id="coming-next" class="level2">
+<h2 class="anchored" data-anchor-id="coming-next">⏳ Coming next</h2>
+<p>HNSW from scratch, on the same 5K corpus. Target: ~100× latency cut at ≥95% recall vs.&nbsp;the brute-force baseline above, with a side-by-side plot.</p>
+<hr>
+</section>
+<section id="working-notes" class="level2">
+<h2 class="anchored" data-anchor-id="working-notes">Working notes</h2>
+<p>Session-1 raw notes (warts and all): <a href="https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1.md"><code>notes/post-01-session-1.md</code></a>. Tutor review of those notes — including the math errors I caught: <a href="https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1-review.md"><code>notes/post-01-session-1-review.md</code></a>.</p>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>retrieval</category>
+  <category>embeddings</category>
+  <category>ANN</category>
+  <category>work-in-progress</category>
+  <guid>https://tyagiprerna0808.github.io/blog/posts/01-embeddings-vector-search/</guid>
+  <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
+</item>
 </channel>
 </rss>

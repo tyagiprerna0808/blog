@@ -1,6 +1,8 @@
 [
   {
     "listing": "/index.html",
-    "items": []
+    "items": [
+      "/posts/01-embeddings-vector-search/index.html"
+    ]
   }
 ]
