@@ -1,38 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Prerna Tyagi",
-    "section": "",
-    "text": "A series on what’s inside the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning — implemented from scratch and measured on real corpora. Each post is paired with a companion notebook in ml-applied-depth.\nInspired by Tanul Singh’s gradient-descent-through-transformers series.\n\n\n\n\n\n\n\n\n\nEmbeddings & Vector Search Internals\n\n\n\nretrieval\n\nembeddings\n\nANN\n\nwork-in-progress\n\n\n\nBrute-force, IVF, PQ, HNSW — implemented and measured from scratch. Work in progress.\n\n\n\n\n\nMay 28, 2026\n\n4 min\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Prerna Tyagi — AI/ML engineer. I build product-grade AI/ML systems end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation.\nThis blog is the long-form companion to my work. Each post pairs an explanation with a from-scratch implementation in ml-applied-depth, plus an assignment notebook so a reader can build the same thing themselves before reading the worked version."
-  },
-  {
-    "objectID": "about.html#shipped",
-    "href": "about.html#shipped",
-    "title": "About",
-    "section": "Shipped",
-    "text": "Shipped\n\nPragya Nursery — ordering platform for my father’s nursery in Greater Noida. Vercel website + Render API + Capacitor Android app + Paytm payments."
-  },
-  {
-    "objectID": "about.html#open-source",
-    "href": "about.html#open-source",
-    "title": "About",
-    "section": "Open-source",
-    "text": "Open-source\n\nCredit Risk Studio — end-to-end ML pipeline case study\nPortfolio Optimizer Lab — optimization for decision support\nTreasury Forecast Lab — time-series forecasting workflow\nFraud Detection Monitor — production-style fraud API\nPersonalized Marketplace Search — hybrid retrieval + reranking"
-  },
-  {
     "objectID": "posts/01-embeddings-vector-search/index.html",
     "href": "posts/01-embeddings-vector-search/index.html",
     "title": "Embeddings & Vector Search Internals",
     "section": "",
-    "text": "This post is being written in public, section by section, as I work through the material. Sections marked ✅ have running code, measured numbers, and a real result in the companion repo. Sections marked ⏳ are not done yet.\nCompanion code: github.com/tyagiprerna0808/ml-applied-depth · Last update: 2026-05-28."
+    "text": "← writing"
   },
   {
     "objectID": "posts/01-embeddings-vector-search/index.html#the-question",
@@ -82,5 +54,33 @@
     "title": "Embeddings & Vector Search Internals",
     "section": "Working notes",
     "text": "Working notes\nSession-1 raw notes (warts and all): notes/post-01-session-1.md. Tutor review of those notes — including the math errors I caught: notes/post-01-session-1-review.md."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Prerna Tyagi — AI/ML engineer. I build product-grade AI/ML systems end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation.\nThis blog is the long-form companion to my work. Each post pairs an explanation with a from-scratch implementation in ml-applied-depth, plus an assignment notebook so a reader can build the same thing themselves before reading the worked version."
+  },
+  {
+    "objectID": "about.html#shipped",
+    "href": "about.html#shipped",
+    "title": "About",
+    "section": "Shipped",
+    "text": "Shipped\n\nPragya Nursery — ordering platform for my father’s nursery in Greater Noida. Vercel website + Render API + Capacitor Android app + Paytm payments."
+  },
+  {
+    "objectID": "about.html#open-source",
+    "href": "about.html#open-source",
+    "title": "About",
+    "section": "Open-source",
+    "text": "Open-source\n\nCredit Risk Studio — end-to-end ML pipeline case study\nPortfolio Optimizer Lab — optimization for decision support\nTreasury Forecast Lab — time-series forecasting workflow\nFraud Detection Monitor — production-style fraud API\nPersonalized Marketplace Search — hybrid retrieval + reranking"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Prerna Tyagi",
+    "section": "",
+    "text": "Prerna Tyagi\n\nApplied AI/ML engineering · India\n\n\n// from-scratch implementations · measured on real corpora\n\nA series on what’s inside the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning. Each post is paired with a companion notebook in ml-applied-depth.\n\n\n\nWriting\n\n\n\n\n\n\n\n\n\n\nEmbeddings & Vector Search Internals\n\n\n\nretrieval\n\nembeddings\n\nann\n\nwork-in-progress\n\n\n\nBrute-force, IVF, PQ, HNSW — implemented and measured from scratch. Work in progress.\n\n\n\n\n\nMay 28, 2026\n\n4 min\n\n\n\n\nNo matching items"
   }
 ]

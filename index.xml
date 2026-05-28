@@ -20,6 +20,9 @@
 
 
 
+<p class="breadcrumb-mono">
+<a href="../../">← writing</a>
+</p>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -168,7 +171,7 @@
  ]]></description>
   <category>retrieval</category>
   <category>embeddings</category>
-  <category>ANN</category>
+  <category>ann</category>
   <category>work-in-progress</category>
   <guid>https://tyagiprerna0808.github.io/blog/posts/01-embeddings-vector-search/</guid>
   <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
