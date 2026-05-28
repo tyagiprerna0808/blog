@@ -12,7 +12,7 @@
 <generator>quarto-1.9.38</generator>
 <lastBuildDate>Wed, 27 May 2026 18:30:00 GMT</lastBuildDate>
 <item>
-  <title>Embeddings &amp; Vector Search Internals</title>
+  <title>01 · Embeddings &amp; vector search</title>
   <dc:creator>Prerna Tyagi</dc:creator>
   <link>https://tyagiprerna0808.github.io/blog/posts/01-embeddings-vector-search/</link>
   <description><![CDATA[ 
@@ -21,7 +21,7 @@
 
 
 <p class="breadcrumb-mono">
-<a href="../../">← writing</a>
+<a href="../../">← series</a>
 </p>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
@@ -29,8 +29,7 @@
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>This post is being written in public, section by section, as I work through the material.</strong> Sections marked ✅ have running code, measured numbers, and a real result in the companion repo. Sections marked ⏳ are not done yet.</p>
-<p>Companion code: <a href="https://github.com/tyagiprerna0808/ml-applied-depth">github.com/tyagiprerna0808/ml-applied-depth</a> · Last update: 2026-05-28.</p>
+<p><strong>Part 1 of <em>Building Blocks of Modern AI</em> — in progress.</strong> This post is being written in public, section by section. Companion code: <a href="https://github.com/tyagiprerna0808/ml-applied-depth">github.com/tyagiprerna0808/ml-applied-depth</a>. Last update: 2026-05-28.</p>
 </div>
 </div>
 </div>
@@ -47,11 +46,7 @@
 <li>⏳ Similarity metrics — cosine vs dot vs L2</li>
 <li>✅ Brute-force baseline on a real corpus</li>
 <li>⏳ The curse of dimensionality</li>
-<li>⏳ IVF — Inverted File Index</li>
-<li>⏳ PQ — Product Quantization</li>
-<li>⏳ HNSW — Hierarchical Navigable Small World</li>
-<li>⏳ Head-to-head comparison</li>
-<li>⏳ Production considerations</li>
+<li>⏳ Coming next — <a href="../02-vector-search-ann/">post 02 · ANN from scratch (HNSW, IVF, PQ)</a></li>
 </ol>
 <hr>
 </section>
@@ -151,17 +146,16 @@
 </tr>
 </tbody>
 </table>
-<p>For reference: English Wikipedia is ≈ 6 million articles, MS MARCO is ≈ 8.8 million passages. Brute force can’t hit a 10 ms production budget on either; HNSW, IVF, and PQ exist to climb past this wall.</p>
+<p>For reference: English Wikipedia is ≈ 6 million articles, MS MARCO is ≈ 8.8 million passages. Brute force can’t hit a 10 ms production budget on either; HNSW, IVF, and PQ exist to climb past this wall — covered in <a href="../02-vector-search-ann/">post 02</a>.</p>
 <hr>
 </section>
 <section id="coming-next" class="level2">
 <h2 class="anchored" data-anchor-id="coming-next">⏳ Coming next</h2>
-<p>HNSW from scratch, on the same 5K corpus. Target: ~100× latency cut at ≥95% recall vs.&nbsp;the brute-force baseline above, with a side-by-side plot.</p>
-<hr>
+<p>Post 02 — ANN data structures from scratch (HNSW, IVF, PQ). Same 5K corpus, target ~100× latency cut at ≥95% recall vs.&nbsp;the brute-force baseline above.</p>
 </section>
 <section id="working-notes" class="level2">
 <h2 class="anchored" data-anchor-id="working-notes">Working notes</h2>
-<p>Session-1 raw notes (warts and all): <a href="https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1.md"><code>notes/post-01-session-1.md</code></a>. Tutor review of those notes — including the math errors I caught: <a href="https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1-review.md"><code>notes/post-01-session-1-review.md</code></a>.</p>
+<p>Session-1 raw notes: <a href="https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1.md"><code>notes/post-01-session-1.md</code></a>. Tutor review of those notes — including the math errors caught: <a href="https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1-review.md"><code>notes/post-01-session-1-review.md</code></a>.</p>
 
 
 <!-- -->
@@ -169,11 +163,378 @@
 </section>
 
  ]]></description>
-  <category>retrieval</category>
+  <category>in-progress</category>
   <category>embeddings</category>
-  <category>ann</category>
-  <category>work-in-progress</category>
+  <category>retrieval</category>
   <guid>https://tyagiprerna0808.github.io/blog/posts/01-embeddings-vector-search/</guid>
+  <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>02 · Vector search — ANN from scratch</title>
+  <dc:creator>Prerna Tyagi</dc:creator>
+  <link>https://tyagiprerna0808.github.io/blog/posts/02-vector-search-ann/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p class="breadcrumb-mono">
+<a href="../../">← series</a>
+</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Planned.</strong> Part of <em>Building Blocks of Modern AI</em>. Companion code lands at <a href="https://github.com/tyagiprerna0808/ml-applied-depth"><code>blog/02-vector-search-ann/</code></a> when work starts.</p>
+</div>
+</div>
+</div>
+<section id="planned-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="planned-coverage">Planned coverage</h2>
+<ul>
+<li>The wall — brute force breaks past ~80K docs at a 10 ms latency budget (extrapolated from <a href="../01-embeddings-vector-search/">post 01</a>)</li>
+<li><strong>IVF</strong> (inverted file index) — k-means partitioning, probe count, recall/latency tradeoff, from scratch</li>
+<li><strong>PQ</strong> (product quantization) — codebooks, asymmetric distance computation, from scratch</li>
+<li><strong>HNSW</strong> (hierarchical navigable small world) — graph construction, greedy descent, the M and efSearch knobs, from scratch</li>
+<li><strong>Head-to-head</strong> — brute force vs IVF vs PQ vs HNSW vs FAISS reference, all measured on the same 5K corpus</li>
+<li><strong>When to use what</strong> — in-process vs managed (Pinecone / Qdrant / Weaviate) and where the cliff is</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>planned</category>
+  <category>retrieval</category>
+  <category>ann</category>
+  <guid>https://tyagiprerna0808.github.io/blog/posts/02-vector-search-ann/</guid>
+  <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>03 · Tokenization</title>
+  <dc:creator>Prerna Tyagi</dc:creator>
+  <link>https://tyagiprerna0808.github.io/blog/posts/03-tokenization/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p class="breadcrumb-mono">
+<a href="../../">← series</a>
+</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Planned.</strong> Part of <em>Building Blocks of Modern AI</em>.</p>
+</div>
+</div>
+</div>
+<section id="planned-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="planned-coverage">Planned coverage</h2>
+<ul>
+<li>Why tokenization matters — what changes if you get it wrong (multilingual, code, math)</li>
+<li>Character-level vs word-level — the extremes and what each costs</li>
+<li><strong>BPE</strong> (byte-pair encoding) from scratch — the algorithm GPT / RoBERTa / Llama use</li>
+<li><strong>WordPiece</strong> — what BERT does differently and why</li>
+<li><strong>SentencePiece + Unigram</strong> — Google’s approach for multilingual</li>
+<li>Comparing tokenizer outputs on the same multilingual text</li>
+<li>Production considerations — vocab size, OOV handling, multilingual tradeoffs, byte-fallback</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>planned</category>
+  <category>tokenization</category>
+  <category>bpe</category>
+  <guid>https://tyagiprerna0808.github.io/blog/posts/03-tokenization/</guid>
+  <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>04 · Attention from scratch</title>
+  <dc:creator>Prerna Tyagi</dc:creator>
+  <link>https://tyagiprerna0808.github.io/blog/posts/04-attention-from-scratch/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p class="breadcrumb-mono">
+<a href="../../">← series</a>
+</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Planned.</strong> Part of <em>Building Blocks of Modern AI</em>.</p>
+</div>
+</div>
+</div>
+<section id="planned-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="planned-coverage">Planned coverage</h2>
+<ul>
+<li>The intuition — weighted average of values, weighted by similarity of queries to keys</li>
+<li><strong>Q, K, V</strong> — what each represents and why three projections, not one</li>
+<li><strong>Scaled dot-product attention</strong> — the formula derived; the √d_k scaling and what breaks without it</li>
+<li><strong>Multi-head attention</strong> — what splitting into heads actually buys you</li>
+<li><strong>Variants</strong> — MQA, GQA, MLA at a glance — why production LLMs use them</li>
+<li>Positional information — sinusoidal and RoPE, in this post</li>
+<li>Implementation from scratch in NumPy, then in PyTorch with shape-by-shape commentary</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>planned</category>
+  <category>attention</category>
+  <category>transformers</category>
+  <guid>https://tyagiprerna0808.github.io/blog/posts/04-attention-from-scratch/</guid>
+  <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>05 · Loss, optimization, backpropagation</title>
+  <dc:creator>Prerna Tyagi</dc:creator>
+  <link>https://tyagiprerna0808.github.io/blog/posts/05-loss-optimization-backprop/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p class="breadcrumb-mono">
+<a href="../../">← series</a>
+</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Planned.</strong> Part of <em>Building Blocks of Modern AI</em>. This post is the literal mechanism behind the signature line — <em>loss decreases with optimized iterations</em> is the algorithm.</p>
+</div>
+</div>
+</div>
+<section id="planned-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="planned-coverage">Planned coverage</h2>
+<ul>
+<li>The loss function family — MSE, cross-entropy, contrastive — when each is right</li>
+<li><strong>Gradient descent</strong> — vanilla, SGD, mini-batch</li>
+<li><strong>Backpropagation</strong> — chain rule, derived end-to-end on a 2-layer MLP</li>
+<li><strong>Adam, AdamW, momentum</strong> — what each fixes vs vanilla SGD</li>
+<li>Learning rate schedules — warmup, cosine; the production defaults</li>
+<li>Vanishing / exploding gradients — why they happen, what fixes them</li>
+<li>From-scratch implementation in NumPy, then PyTorch</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>planned</category>
+  <category>training</category>
+  <category>backprop</category>
+  <category>optimization</category>
+  <guid>https://tyagiprerna0808.github.io/blog/posts/05-loss-optimization-backprop/</guid>
+  <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>06 · Fine-tuning fundamentals — LoRA</title>
+  <dc:creator>Prerna Tyagi</dc:creator>
+  <link>https://tyagiprerna0808.github.io/blog/posts/06-fine-tuning-lora/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p class="breadcrumb-mono">
+<a href="../../">← series</a>
+</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Planned.</strong> First application post in <em>Building Blocks of Modern AI</em> — builds directly on attention (<a href="../04-attention-from-scratch/">04</a>) and optimization (<a href="../05-loss-optimization-backprop/">05</a>).</p>
+</div>
+</div>
+</div>
+<section id="planned-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="planned-coverage">Planned coverage</h2>
+<ul>
+<li>The fine-tuning question — when does it beat a well-engineered prompt</li>
+<li><strong>Full fine-tuning</strong> — what it costs (compute, memory, dataset, eval discipline)</li>
+<li><strong>LoRA</strong> — the low-rank decomposition math, why r=8 is a workable default</li>
+<li><strong>QLoRA</strong> — what 4-bit quantization buys you in memory</li>
+<li>Practical workflow on a small open model (TinyLlama or similar) — end to end</li>
+<li>Eval-driven iteration — picking when to stop training</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>planned</category>
+  <category>fine-tuning</category>
+  <category>lora</category>
+  <guid>https://tyagiprerna0808.github.io/blog/posts/06-fine-tuning-lora/</guid>
+  <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>07 · Retrieval &amp; RAG</title>
+  <dc:creator>Prerna Tyagi</dc:creator>
+  <link>https://tyagiprerna0808.github.io/blog/posts/07-retrieval-rag/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p class="breadcrumb-mono">
+<a href="../../">← series</a>
+</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Planned.</strong> Part of <em>Building Blocks of Modern AI</em>. Builds on embeddings (<a href="../01-embeddings-vector-search/">01</a>) and ANN (<a href="../02-vector-search-ann/">02</a>).</p>
+</div>
+</div>
+</div>
+<section id="planned-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="planned-coverage">Planned coverage</h2>
+<ul>
+<li><strong>BM25 from scratch</strong> — the keyword baseline that still wins more than people admit</li>
+<li><strong>Dense retrieval</strong> — extending post 01’s embeddings to a real corpus</li>
+<li><strong>Hybrid scoring</strong> — reciprocal rank fusion, weighted combination</li>
+<li><strong>Cross-encoder reranking</strong> — when it helps, when it hurts</li>
+<li>RAG end-to-end on a real corpus, measured</li>
+<li>Failure modes — query rewriting, multi-hop, lost-in-the-middle, citation faithfulness</li>
+<li>The gap between “RAG works on a demo” and “RAG works in production”</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>planned</category>
+  <category>retrieval</category>
+  <category>rag</category>
+  <category>bm25</category>
+  <guid>https://tyagiprerna0808.github.io/blog/posts/07-retrieval-rag/</guid>
+  <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>08 · Evals for generative systems</title>
+  <dc:creator>Prerna Tyagi</dc:creator>
+  <link>https://tyagiprerna0808.github.io/blog/posts/08-evals/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p class="breadcrumb-mono">
+<a href="../../">← series</a>
+</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Planned.</strong> Part of <em>Building Blocks of Modern AI</em>.</p>
+</div>
+</div>
+</div>
+<section id="planned-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="planned-coverage">Planned coverage</h2>
+<ul>
+<li>Why classical metrics (BLEU, ROUGE) fail for generative tasks</li>
+<li><strong>Golden sets</strong> — building, curating, versioning</li>
+<li><strong>LLM-as-judge</strong> — pairwise vs pointwise, calibration against humans</li>
+<li><strong>Rubric design</strong> — what to measure beyond “is it good”</li>
+<li>A regression harness you can drop into CI</li>
+<li>Cost vs signal — cheaper judges, bigger judges, when each makes sense</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>planned</category>
+  <category>evals</category>
+  <category>llm-as-judge</category>
+  <guid>https://tyagiprerna0808.github.io/blog/posts/08-evals/</guid>
+  <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>09 · Agent loops &amp; tool use</title>
+  <dc:creator>Prerna Tyagi</dc:creator>
+  <link>https://tyagiprerna0808.github.io/blog/posts/09-agents/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p class="breadcrumb-mono">
+<a href="../../">← series</a>
+</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Planned.</strong> Final post of <em>Building Blocks of Modern AI</em> — pulls earlier blocks together into a working loop.</p>
+</div>
+</div>
+</div>
+<section id="planned-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="planned-coverage">Planned coverage</h2>
+<ul>
+<li>The basic loop — observe, think, act, observe, repeat</li>
+<li><strong>ReAct from scratch</strong> — without LangChain</li>
+<li><strong>Tool calling</strong> — function-calling APIs and what the JSON schema actually gives you</li>
+<li>Planning vs reacting — when each pattern is right</li>
+<li><strong>Error recovery</strong> — what happens when the tool fails (and how often it does)</li>
+<li>Short-term context vs long-term memory</li>
+<li>The gap between “works in a demo” and “works in production”</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>planned</category>
+  <category>agents</category>
+  <category>react</category>
+  <category>tool-use</category>
+  <guid>https://tyagiprerna0808.github.io/blog/posts/09-agents/</guid>
   <pubDate>Wed, 27 May 2026 18:30:00 GMT</pubDate>
 </item>
 </channel>

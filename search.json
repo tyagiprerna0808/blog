@@ -4,35 +4,91 @@
     "href": "projects.html",
     "title": "Builds",
     "section": "",
-    "text": "~/builds/\n\n\nBuilds\n\nShipped products and applied-ML case studies. Each one optimises for engineering discipline — APIs, deployment, evaluation, monitoring — alongside the model work.\n\n\n\n\n\n\n&lt;div class=\"project-tags\"&gt;\n  &lt;span class=\"project-tag\"&gt;e-commerce&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;capacitor&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;paytm&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;vercel + render&lt;/span&gt;\n&lt;/div&gt;\n&lt;span class=\"status-badge status-shipped\"&gt;shipped&lt;/span&gt;\n\n\nPragya Nursery — live ordering platform\n\n\nA real ordering platform for my father’s plant nursery in Greater Noida. Vercel website, Render API, Capacitor Android app, Paytm payments, geofenced delivery within 15 km, persistent order storage, CI-deployed on every push to master. Live customers, real revenue.\n\n\n\n\n&lt;div class=\"project-tags\"&gt;\n  &lt;span class=\"project-tag\"&gt;embeddings&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;retrieval&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;quarto&lt;/span&gt;\n&lt;/div&gt;\n&lt;span class=\"status-badge status-wip\"&gt;wip&lt;/span&gt;\n\n\nml-applied-depth — companion code for this blog\n\n\nFrom-scratch implementations of the building blocks of modern AI products, paired with every blog post. Notebooks + experiments + assignment scaffolds so readers can build each component themselves before reading the worked version.\n\n\n\n\n&lt;div class=\"project-tags\"&gt;\n  &lt;span class=\"project-tag\"&gt;ml pipeline&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;fintech&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;dashboards&lt;/span&gt;\n&lt;/div&gt;\n&lt;span class=\"status-badge status-shipped\"&gt;shipped&lt;/span&gt;\n\n\nCredit Risk Studio\n\n\nEnd-to-end ML pipeline case study with feature engineering, model selection, calibration, and a dashboard front end. Built as a portfolio piece demonstrating production-grade credit-risk modeling.\n\n\n\n\n&lt;div class=\"project-tags\"&gt;\n  &lt;span class=\"project-tag\"&gt;production api&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;docker&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;fraud&lt;/span&gt;\n&lt;/div&gt;\n&lt;span class=\"status-badge status-shipped\"&gt;shipped&lt;/span&gt;\n\n\nFraud Detection Monitor\n\n\nProduction-style fraud API with health/readiness endpoints, Docker workflow, baseline benchmark artifacts, and observability hooks. Built like a real service, not a notebook.\n\n\n\n\n&lt;div class=\"project-tags\"&gt;\n  &lt;span class=\"project-tag\"&gt;retrieval&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;ranking&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;hybrid search&lt;/span&gt;\n&lt;/div&gt;\n&lt;span class=\"status-badge status-shipped\"&gt;shipped&lt;/span&gt;\n\n\nPersonalized Marketplace Search\n\n\nHybrid retrieval (sparse + dense) with cross-encoder reranking, offline metrics, and an API serving layer. Built like a production relevance system rather than a one-off notebook.\n\n\n\n\n&lt;div class=\"project-tags\"&gt;\n  &lt;span class=\"project-tag\"&gt;time series&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;forecasting&lt;/span&gt;\n&lt;/div&gt;\n&lt;span class=\"status-badge status-shipped\"&gt;shipped&lt;/span&gt;\n\n\nTreasury Forecast Lab\n\n\nForecasting workflow demonstrating time-series modeling, evaluation, and practical decision support for treasury operations.\n\n\n\n\n&lt;div class=\"project-tags\"&gt;\n  &lt;span class=\"project-tag\"&gt;optimization&lt;/span&gt;\n  &lt;span class=\"project-tag\"&gt;quantitative&lt;/span&gt;\n&lt;/div&gt;\n&lt;span class=\"status-badge status-shipped\"&gt;shipped&lt;/span&gt;\n\n\nPortfolio Optimizer Lab\n\n\nOptimization and quantitative modeling case study for decision support, with reproducible experiments and clean APIs."
+    "text": "~/builds/\n\n\nBuilds\n\nShipped products and applied-ML case studies. Each one optimises for engineering discipline — APIs, deployment, evaluation, monitoring — alongside the model work.\n\n\n\n\n\n\n\ne-commercecapacitorpaytmvercel + render\nshipped\n\nPragya Nursery — live ordering platform\nA real ordering platform for my father's plant nursery in Greater Noida. Vercel website, Render API, Capacitor Android app, Paytm payments, geofenced delivery within 15 km, persistent order storage, CI-deployed on every push to master. Live customers, real revenue.\n\n\n\n\nembeddingsretrievalquarto\nwip\n\nml-applied-depth — companion code for this blog\nFrom-scratch implementations of the building blocks of modern AI, paired with every post. Notebooks + experiments + assignment scaffolds so readers build each component themselves before reading the worked version.\n\n\n\n\nml pipelinefintechdashboards\nshipped\n\nCredit Risk Studio\nEnd-to-end ML pipeline case study with feature engineering, model selection, calibration, and a dashboard front end. Built as a portfolio piece demonstrating production-grade credit-risk modeling.\n\n\n\n\nproduction apidockerfraud\nshipped\n\nFraud Detection Monitor\nProduction-style fraud API with health/readiness endpoints, Docker workflow, baseline benchmark artifacts, and observability hooks. Built like a real service, not a notebook.\n\n\n\n\nretrievalrankinghybrid search\nshipped\n\nPersonalized Marketplace Search\nHybrid retrieval (sparse + dense) with cross-encoder reranking, offline metrics, and an API serving layer. Built like a production relevance system rather than a one-off notebook.\n\n\n\n\ntime seriesforecasting\nshipped\n\nTreasury Forecast Lab\nForecasting workflow demonstrating time-series modeling, evaluation, and practical decision support for treasury operations.\n\n\n\n\noptimizationquantitative\nshipped\n\nPortfolio Optimizer Lab\nOptimization and quantitative modeling case study for decision support, with reproducible experiments and clean APIs."
+  },
+  {
+    "objectID": "posts/08-evals/index.html",
+    "href": "posts/08-evals/index.html",
+    "title": "08 · Evals for generative systems",
+    "section": "",
+    "text": "← series"
+  },
+  {
+    "objectID": "posts/08-evals/index.html#planned-coverage",
+    "href": "posts/08-evals/index.html#planned-coverage",
+    "title": "08 · Evals for generative systems",
+    "section": "Planned coverage",
+    "text": "Planned coverage\n\nWhy classical metrics (BLEU, ROUGE) fail for generative tasks\nGolden sets — building, curating, versioning\nLLM-as-judge — pairwise vs pointwise, calibration against humans\nRubric design — what to measure beyond “is it good”\nA regression harness you can drop into CI\nCost vs signal — cheaper judges, bigger judges, when each makes sense"
+  },
+  {
+    "objectID": "posts/06-fine-tuning-lora/index.html",
+    "href": "posts/06-fine-tuning-lora/index.html",
+    "title": "06 · Fine-tuning fundamentals — LoRA",
+    "section": "",
+    "text": "← series"
+  },
+  {
+    "objectID": "posts/06-fine-tuning-lora/index.html#planned-coverage",
+    "href": "posts/06-fine-tuning-lora/index.html#planned-coverage",
+    "title": "06 · Fine-tuning fundamentals — LoRA",
+    "section": "Planned coverage",
+    "text": "Planned coverage\n\nThe fine-tuning question — when does it beat a well-engineered prompt\nFull fine-tuning — what it costs (compute, memory, dataset, eval discipline)\nLoRA — the low-rank decomposition math, why r=8 is a workable default\nQLoRA — what 4-bit quantization buys you in memory\nPractical workflow on a small open model (TinyLlama or similar) — end to end\nEval-driven iteration — picking when to stop training"
+  },
+  {
+    "objectID": "posts/04-attention-from-scratch/index.html",
+    "href": "posts/04-attention-from-scratch/index.html",
+    "title": "04 · Attention from scratch",
+    "section": "",
+    "text": "← series"
+  },
+  {
+    "objectID": "posts/04-attention-from-scratch/index.html#planned-coverage",
+    "href": "posts/04-attention-from-scratch/index.html#planned-coverage",
+    "title": "04 · Attention from scratch",
+    "section": "Planned coverage",
+    "text": "Planned coverage\n\nThe intuition — weighted average of values, weighted by similarity of queries to keys\nQ, K, V — what each represents and why three projections, not one\nScaled dot-product attention — the formula derived; the √d_k scaling and what breaks without it\nMulti-head attention — what splitting into heads actually buys you\nVariants — MQA, GQA, MLA at a glance — why production LLMs use them\nPositional information — sinusoidal and RoPE, in this post\nImplementation from scratch in NumPy, then in PyTorch with shape-by-shape commentary"
+  },
+  {
+    "objectID": "posts/02-vector-search-ann/index.html",
+    "href": "posts/02-vector-search-ann/index.html",
+    "title": "02 · Vector search — ANN from scratch",
+    "section": "",
+    "text": "← series"
+  },
+  {
+    "objectID": "posts/02-vector-search-ann/index.html#planned-coverage",
+    "href": "posts/02-vector-search-ann/index.html#planned-coverage",
+    "title": "02 · Vector search — ANN from scratch",
+    "section": "Planned coverage",
+    "text": "Planned coverage\n\nThe wall — brute force breaks past ~80K docs at a 10 ms latency budget (extrapolated from post 01)\nIVF (inverted file index) — k-means partitioning, probe count, recall/latency tradeoff, from scratch\nPQ (product quantization) — codebooks, asymmetric distance computation, from scratch\nHNSW (hierarchical navigable small world) — graph construction, greedy descent, the M and efSearch knobs, from scratch\nHead-to-head — brute force vs IVF vs PQ vs HNSW vs FAISS reference, all measured on the same 5K corpus\nWhen to use what — in-process vs managed (Pinecone / Qdrant / Weaviate) and where the cliff is"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Building Blocks of Modern AI",
     "section": "",
-    "text": "~/series/\n\n\nBuilding Blocks of Modern AI\n\nA code-first journey through what’s inside every modern AI system — embeddings, tokenization, attention, positional encoding, fine-tuning, retrieval, agents. Each component implemented from scratch and measured on real data. Companion code in ml-applied-depth.\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings & Vector Search Internals\n\n\n\nretrieval\n\nembeddings\n\nann\n\nwork-in-progress\n\n\n\nBrute-force, IVF, PQ, HNSW — implemented and measured from scratch. Work in progress.\n\n\n\n\n\nMay 28, 2026\n\n4 min\n\n\n\n\nNo matching items"
+    "text": "~/series/\n\n\nBuilding Blocks of Modern AI\n\nA code-first journey through what’s inside every modern AI system — embeddings, tokenization, attention, positional encoding, fine-tuning, retrieval, agents. Each component implemented from scratch and measured on real data. Companion code in ml-applied-depth.\n\n\n\n\n\n\n\n\n\n\n\n\n01 · Embeddings & vector search\n\n\n\nin-progress\n\nembeddings\n\nretrieval\n\n\n\nIn progress · Embeddings, similarity, brute-force baseline measured at 0.7 ms on a 5K corpus. ANN methods coming in post 02.\n\n\n\n\n\nMay 28, 2026\n\n4 min\n\n\n\n\n\n\n02 · Vector search — ANN from scratch\n\n\n\nplanned\n\nretrieval\n\nann\n\n\n\nPlanned · Approximate nearest neighbor methods. HNSW, IVF, PQ built from scratch. The wall brute force can’t climb.\n\n\n\n\n\nMay 28, 2026\n\n1 min\n\n\n\n\n\n\n03 · Tokenization\n\n\n\nplanned\n\ntokenization\n\nbpe\n\n\n\nPlanned · BPE, WordPiece, SentencePiece. How text becomes integers, and why the choice shapes everything downstream.\n\n\n\n\n\nMay 28, 2026\n\n1 min\n\n\n\n\n\n\n04 · Attention from scratch\n\n\n\nplanned\n\nattention\n\ntransformers\n\n\n\nPlanned · Scaled dot-product attention, multi-head, MQA / GQA. The math derived and the code written line by line.\n\n\n\n\n\nMay 28, 2026\n\n1 min\n\n\n\n\n\n\n05 · Loss, optimization, backpropagation\n\n\n\nplanned\n\ntraining\n\nbackprop\n\noptimization\n\n\n\nPlanned · How models learn. Loss functions, gradient descent, Adam, backprop derived end-to-end on a 2-layer MLP.\n\n\n\n\n\nMay 28, 2026\n\n1 min\n\n\n\n\n\n\n06 · Fine-tuning fundamentals — LoRA\n\n\n\nplanned\n\nfine-tuning\n\nlora\n\n\n\nPlanned · When to fine-tune, when to prompt. LoRA math + QLoRA, run on a small open model end-to-end.\n\n\n\n\n\nMay 28, 2026\n\n1 min\n\n\n\n\n\n\n07 · Retrieval & RAG\n\n\n\nplanned\n\nretrieval\n\nrag\n\nbm25\n\n\n\nPlanned · Sparse + dense + reranking, then assembled into a RAG pipeline that doesn’t pretend retrieval is solved.\n\n\n\n\n\nMay 28, 2026\n\n1 min\n\n\n\n\n\n\n08 · Evals for generative systems\n\n\n\nplanned\n\nevals\n\nllm-as-judge\n\n\n\nPlanned · LLM-as-judge, golden sets, a regression harness. The eval discipline that catches what metrics miss.\n\n\n\n\n\nMay 28, 2026\n\n1 min\n\n\n\n\n\n\n09 · Agent loops & tool use\n\n\n\nplanned\n\nagents\n\nreact\n\ntool-use\n\n\n\nPlanned · ReAct from scratch. Tool calling internals. The control flow that makes models act, not just generate.\n\n\n\n\n\nMay 28, 2026\n\n1 min\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Prerna Tyagi",
     "section": "",
-    "text": "&lt;div class=\"about-photo-halo\"&gt;&lt;/div&gt;\n&lt;img src=\"images/profile.jpg\"\n     onerror=\"this.src='images/profile-placeholder.svg'\"\n     class=\"about-photo\"\n     alt=\"Prerna Tyagi\"&gt;\n\n\n&lt;p class=\"section-crumb\"&gt;~/about/&lt;/p&gt;\n&lt;h1 class=\"about-name\"&gt;Prerna Tyagi&lt;/h1&gt;\n&lt;p class=\"about-tagline\"&gt;AI/ML engineer who &lt;strong&gt;ships&lt;/strong&gt;. Currently turning a model-focused data-science background into applied AI engineering for production systems.&lt;/p&gt;\n&lt;p class=\"about-bio\"&gt;Self-taught the production half of the stack — APIs, deployment, observability, evals — by building a real e-commerce platform for my father's plant nursery and writing a long-form series implementing the building blocks of modern AI from scratch.&lt;/p&gt;\n\n&lt;div class=\"about-links\"&gt;\n  &lt;a href=\"https://github.com/tyagiprerna0808\" target=\"_blank\" rel=\"noopener\" aria-label=\"GitHub\"&gt;\n    &lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 16 16\" fill=\"currentColor\"&gt;&lt;path d=\"M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z\"/&gt;&lt;/svg&gt;\n  &lt;/a&gt;\n  &lt;a href=\"https://www.linkedin.com/in/prerna-tyagi-/\" target=\"_blank\" rel=\"noopener\" aria-label=\"LinkedIn\"&gt;\n    &lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 16 16\" fill=\"currentColor\"&gt;&lt;path d=\"M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z\"/&gt;&lt;/svg&gt;\n  &lt;/a&gt;\n  &lt;a href=\"https://x.com/prernaaa0808\" target=\"_blank\" rel=\"noopener\" aria-label=\"X / Twitter\"&gt;\n    &lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 16 16\" fill=\"currentColor\"&gt;&lt;path d=\"M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z\"/&gt;&lt;/svg&gt;\n  &lt;/a&gt;\n  &lt;a href=\"https://www.kaggle.com/prena0808\" target=\"_blank\" rel=\"noopener\" aria-label=\"Kaggle\"&gt;\n    &lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\"&gt;&lt;path d=\"M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358\"/&gt;&lt;/svg&gt;\n  &lt;/a&gt;\n&lt;/div&gt;"
+    "text": "~/about/\n\nGradient Descending Statistician. Decoding AI/ML by applying it — shipping first, studying why it worked second.\nStatistics background. Started shipping real things before I felt ready — backpropagation, for my career — and writing about each one as I go."
   },
   {
     "objectID": "about.html#the-work",
     "href": "about.html#the-work",
     "title": "Prerna Tyagi",
     "section": "The work",
-    "text": "The work\nI build AI/ML products end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation. The portfolio breaks into three lanes:\n\nShipped product — Pragya Nursery, a real e-commerce platform live for my father’s plant nursery in Greater Noida. Vercel + Render + Capacitor + Paytm.\nApplied case studies — Credit Risk Studio, Fraud Detection Monitor, Personalized Marketplace Search, and others — each built with production discipline rather than notebook polish.\nThis blog — implementing the modern AI building blocks from scratch, paired with companion notebooks in ml-applied-depth."
+    "text": "The work\nI build AI/ML products end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation. The portfolio breaks into three lanes:\n\nShipped product — Pragya Nursery, a real e-commerce platform live for my father’s plant nursery in Greater Noida. Vercel + Render + Capacitor + Paytm.\nApplied case studies — Credit Risk Studio, Fraud Detection Monitor, Personalized Marketplace Search, and others — each built with production discipline rather than notebook polish.\nThis blog — implementing the building blocks of modern AI from scratch, paired with companion notebooks in ml-applied-depth."
   },
   {
     "objectID": "about.html#currently-learning-in-public",
     "href": "about.html#currently-learning-in-public",
     "title": "Prerna Tyagi",
     "section": "Currently learning in public",
-    "text": "Currently learning in public\nA long-form series on what’s actually inside the production AI stack — embeddings, retrieval, evals, agents, fine-tuning. Each post takes weeks because every claim is paired with running from-scratch code and measured experiments. The point isn’t to be the first to write about these topics — it’s to be honest about what depth actually costs. Read it in writing."
+    "text": "Currently learning in public\nA long-form series on what’s actually inside the production AI stack — embeddings, attention, tokenization, retrieval, fine-tuning, agents. Each post takes weeks because every claim is paired with running from-scratch code and measured experiments. Read it in Building Blocks of Modern AI."
   },
   {
     "objectID": "about.html#reach-out",
@@ -44,57 +100,113 @@
   {
     "objectID": "posts/01-embeddings-vector-search/index.html",
     "href": "posts/01-embeddings-vector-search/index.html",
-    "title": "Embeddings & Vector Search Internals",
+    "title": "01 · Embeddings & vector search",
     "section": "",
-    "text": "← writing"
+    "text": "← series"
   },
   {
     "objectID": "posts/01-embeddings-vector-search/index.html#the-question",
     "href": "posts/01-embeddings-vector-search/index.html#the-question",
-    "title": "Embeddings & Vector Search Internals",
+    "title": "01 · Embeddings & vector search",
     "section": "The question",
     "text": "The question\n\nGiven a corpus of millions of documents and a query, return the top-k nearest neighbors in under 10 ms with recall@10 &gt; 0.95, on a laptop. How does that actually work?"
   },
   {
     "objectID": "posts/01-embeddings-vector-search/index.html#roadmap",
     "href": "posts/01-embeddings-vector-search/index.html#roadmap",
-    "title": "Embeddings & Vector Search Internals",
+    "title": "01 · Embeddings & vector search",
     "section": "Roadmap",
-    "text": "Roadmap\n\n✅ What an embedding is (first taste)\n⏳ Similarity metrics — cosine vs dot vs L2\n✅ Brute-force baseline on a real corpus\n⏳ The curse of dimensionality\n⏳ IVF — Inverted File Index\n⏳ PQ — Product Quantization\n⏳ HNSW — Hierarchical Navigable Small World\n⏳ Head-to-head comparison\n⏳ Production considerations"
+    "text": "Roadmap\n\n✅ What an embedding is (first taste)\n⏳ Similarity metrics — cosine vs dot vs L2\n✅ Brute-force baseline on a real corpus\n⏳ The curse of dimensionality\n⏳ Coming next — post 02 · ANN from scratch (HNSW, IVF, PQ)"
   },
   {
     "objectID": "posts/01-embeddings-vector-search/index.html#a-first-taste",
     "href": "posts/01-embeddings-vector-search/index.html#a-first-taste",
-    "title": "Embeddings & Vector Search Internals",
+    "title": "01 · Embeddings & vector search",
     "section": "✅ A first taste",
     "text": "✅ A first taste\nCode: blog/01-embeddings/hello_embeddings.py\nFour sentences — two about gardening, two about finance. The model (sentence-transformers/all-MiniLM-L6-v2, 384-d) never sees the topic labels.\n  0.622   'I love plants'              vs  'Gardening is fun'             ← gardening\n  0.149   'The stock market crashed'   vs  'Bonds and treasury yields'    ← finance\n  0.021   'I love plants'              vs  'The stock market crashed'\n  0.016   'I love plants'              vs  'Bonds and treasury yields'\n  0.015   'Gardening is fun'           vs  'The stock market crashed'\n  0.005   'Gardening is fun'           vs  'Bonds and treasury yields'\nCross-pairs score 30× to 120× lower than the same-topic pairs.\nThe gardening pair (0.62) outscores the finance pair (0.15) — both topical neighbors, but “I love plants” and “Gardening is fun” are closer in sentiment-and-meaning than “stock market crashed” (a panic event) and “bonds and treasury yields” (fixed-income instruments). Embeddings reflect meaning, not just topic labels."
   },
   {
     "objectID": "posts/01-embeddings-vector-search/index.html#brute-force-search-on-5000-news-passages",
     "href": "posts/01-embeddings-vector-search/index.html#brute-force-search-on-5000-news-passages",
-    "title": "Embeddings & Vector Search Internals",
+    "title": "01 · Embeddings & vector search",
     "section": "✅ Brute-force search on 5,000 news passages",
     "text": "✅ Brute-force search on 5,000 news passages\nCode: blog/01-embeddings/search_corpus.py\nCorpus: 5,000 passages from fancyzhx/ag_news. Embeddings cached to disk after the first run. Top-k via one matmul per query against the L2-normalized corpus matrix.\nSample query: “tennis player wins grand slam”. Top result:\n\nRoddick escapes, but not Federer. ATHENS, Greece. Andy Roddick #39;s biggest obstacle to winning the gold medal was Roger Federer…\n\nThe phrase “grand slam” does not appear in the passage. The embedding placed it as the closest match because Roddick + Federer + Olympics + gold medal sits at the right point in tennis-meaning-space.\nAnother query: “earnings report from a tech company”. The third match was Limited Brands — a clothing retailer with earnings reports. The embedding weighted earnings report heavily and partially missed tech company; when a query bundles multiple concepts, the embedding averages them and one concept can dominate. This is exactly why production RAG adds reranking, query rewriting, and hybrid sparse+dense search.\nSteady-state search latency at N=5,000: ~0.7 ms per query (single CPU core)."
   },
   {
     "objectID": "posts/01-embeddings-vector-search/index.html#latency-scaling-when-brute-force-breaks",
     "href": "posts/01-embeddings-vector-search/index.html#latency-scaling-when-brute-force-breaks",
-    "title": "Embeddings & Vector Search Internals",
+    "title": "01 · Embeddings & vector search",
     "section": "✅ Latency scaling — when brute force breaks",
-    "text": "✅ Latency scaling — when brute force breaks\nCode: blog/01-embeddings/latency_scaling.py\nMeasured: K=10, 50 queries per N, 384-d vectors, single CPU core (Intel i5-9300H), L2-normalized matmul.\n\n\n\nN\nmean (ms)\np95 (ms)\n\n\n\n\n100\n0.017\n0.021\n\n\n500\n0.033\n0.036\n\n\n1,000\n0.052\n0.067\n\n\n2,500\n0.279\n0.440\n\n\n5,000\n0.605\n0.857\n\n\n\n\n\n\nBrute-force top-10 latency vs corpus size N (5K corpus, 384-d, CPU).\n\n\nPast N ≈ 1,000 the curve is linear: ~121 ns per document. Linear extrapolation:\n\n\n\nLatency budget\nBrute-force ceiling\n\n\n\n\n10 ms\n~83,000 docs\n\n\n100 ms\n~830,000 docs\n\n\n1 s\n~8.3 million docs\n\n\n\nFor reference: English Wikipedia is ≈ 6 million articles, MS MARCO is ≈ 8.8 million passages. Brute force can’t hit a 10 ms production budget on either; HNSW, IVF, and PQ exist to climb past this wall."
+    "text": "✅ Latency scaling — when brute force breaks\nCode: blog/01-embeddings/latency_scaling.py\nMeasured: K=10, 50 queries per N, 384-d vectors, single CPU core (Intel i5-9300H), L2-normalized matmul.\n\n\n\nN\nmean (ms)\np95 (ms)\n\n\n\n\n100\n0.017\n0.021\n\n\n500\n0.033\n0.036\n\n\n1,000\n0.052\n0.067\n\n\n2,500\n0.279\n0.440\n\n\n5,000\n0.605\n0.857\n\n\n\n\n\n\nBrute-force top-10 latency vs corpus size N (5K corpus, 384-d, CPU).\n\n\nPast N ≈ 1,000 the curve is linear: ~121 ns per document. Linear extrapolation:\n\n\n\nLatency budget\nBrute-force ceiling\n\n\n\n\n10 ms\n~83,000 docs\n\n\n100 ms\n~830,000 docs\n\n\n1 s\n~8.3 million docs\n\n\n\nFor reference: English Wikipedia is ≈ 6 million articles, MS MARCO is ≈ 8.8 million passages. Brute force can’t hit a 10 ms production budget on either; HNSW, IVF, and PQ exist to climb past this wall — covered in post 02."
   },
   {
     "objectID": "posts/01-embeddings-vector-search/index.html#coming-next",
     "href": "posts/01-embeddings-vector-search/index.html#coming-next",
-    "title": "Embeddings & Vector Search Internals",
+    "title": "01 · Embeddings & vector search",
     "section": "⏳ Coming next",
-    "text": "⏳ Coming next\nHNSW from scratch, on the same 5K corpus. Target: ~100× latency cut at ≥95% recall vs. the brute-force baseline above, with a side-by-side plot."
+    "text": "⏳ Coming next\nPost 02 — ANN data structures from scratch (HNSW, IVF, PQ). Same 5K corpus, target ~100× latency cut at ≥95% recall vs. the brute-force baseline above."
   },
   {
     "objectID": "posts/01-embeddings-vector-search/index.html#working-notes",
     "href": "posts/01-embeddings-vector-search/index.html#working-notes",
-    "title": "Embeddings & Vector Search Internals",
+    "title": "01 · Embeddings & vector search",
     "section": "Working notes",
-    "text": "Working notes\nSession-1 raw notes (warts and all): notes/post-01-session-1.md. Tutor review of those notes — including the math errors I caught: notes/post-01-session-1-review.md."
+    "text": "Working notes\nSession-1 raw notes: notes/post-01-session-1.md. Tutor review of those notes — including the math errors caught: notes/post-01-session-1-review.md."
+  },
+  {
+    "objectID": "posts/03-tokenization/index.html",
+    "href": "posts/03-tokenization/index.html",
+    "title": "03 · Tokenization",
+    "section": "",
+    "text": "← series"
+  },
+  {
+    "objectID": "posts/03-tokenization/index.html#planned-coverage",
+    "href": "posts/03-tokenization/index.html#planned-coverage",
+    "title": "03 · Tokenization",
+    "section": "Planned coverage",
+    "text": "Planned coverage\n\nWhy tokenization matters — what changes if you get it wrong (multilingual, code, math)\nCharacter-level vs word-level — the extremes and what each costs\nBPE (byte-pair encoding) from scratch — the algorithm GPT / RoBERTa / Llama use\nWordPiece — what BERT does differently and why\nSentencePiece + Unigram — Google’s approach for multilingual\nComparing tokenizer outputs on the same multilingual text\nProduction considerations — vocab size, OOV handling, multilingual tradeoffs, byte-fallback"
+  },
+  {
+    "objectID": "posts/05-loss-optimization-backprop/index.html",
+    "href": "posts/05-loss-optimization-backprop/index.html",
+    "title": "05 · Loss, optimization, backpropagation",
+    "section": "",
+    "text": "← series"
+  },
+  {
+    "objectID": "posts/05-loss-optimization-backprop/index.html#planned-coverage",
+    "href": "posts/05-loss-optimization-backprop/index.html#planned-coverage",
+    "title": "05 · Loss, optimization, backpropagation",
+    "section": "Planned coverage",
+    "text": "Planned coverage\n\nThe loss function family — MSE, cross-entropy, contrastive — when each is right\nGradient descent — vanilla, SGD, mini-batch\nBackpropagation — chain rule, derived end-to-end on a 2-layer MLP\nAdam, AdamW, momentum — what each fixes vs vanilla SGD\nLearning rate schedules — warmup, cosine; the production defaults\nVanishing / exploding gradients — why they happen, what fixes them\nFrom-scratch implementation in NumPy, then PyTorch"
+  },
+  {
+    "objectID": "posts/07-retrieval-rag/index.html",
+    "href": "posts/07-retrieval-rag/index.html",
+    "title": "07 · Retrieval & RAG",
+    "section": "",
+    "text": "← series"
+  },
+  {
+    "objectID": "posts/07-retrieval-rag/index.html#planned-coverage",
+    "href": "posts/07-retrieval-rag/index.html#planned-coverage",
+    "title": "07 · Retrieval & RAG",
+    "section": "Planned coverage",
+    "text": "Planned coverage\n\nBM25 from scratch — the keyword baseline that still wins more than people admit\nDense retrieval — extending post 01’s embeddings to a real corpus\nHybrid scoring — reciprocal rank fusion, weighted combination\nCross-encoder reranking — when it helps, when it hurts\nRAG end-to-end on a real corpus, measured\nFailure modes — query rewriting, multi-hop, lost-in-the-middle, citation faithfulness\nThe gap between “RAG works on a demo” and “RAG works in production”"
+  },
+  {
+    "objectID": "posts/09-agents/index.html",
+    "href": "posts/09-agents/index.html",
+    "title": "09 · Agent loops & tool use",
+    "section": "",
+    "text": "← series"
+  },
+  {
+    "objectID": "posts/09-agents/index.html#planned-coverage",
+    "href": "posts/09-agents/index.html#planned-coverage",
+    "title": "09 · Agent loops & tool use",
+    "section": "Planned coverage",
+    "text": "Planned coverage\n\nThe basic loop — observe, think, act, observe, repeat\nReAct from scratch — without LangChain\nTool calling — function-calling APIs and what the JSON schema actually gives you\nPlanning vs reacting — when each pattern is right\nError recovery — what happens when the tool fails (and how often it does)\nShort-term context vs long-term memory\nThe gap between “works in a demo” and “works in production”"
   }
 ]

@@ -2,7 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tyagiprerna0808.github.io/blog/projects.html</loc>
-    <lastmod>2026-05-28T17:54:00.321Z</lastmod>
+    <lastmod>2026-05-28T20:06:39.876Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tyagiprerna0808.github.io/blog/posts/08-evals/index.html</loc>
+    <lastmod>2026-05-28T20:08:17.792Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tyagiprerna0808.github.io/blog/posts/06-fine-tuning-lora/index.html</loc>
+    <lastmod>2026-05-28T20:08:09.312Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tyagiprerna0808.github.io/blog/posts/04-attention-from-scratch/index.html</loc>
+    <lastmod>2026-05-28T20:07:59.217Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tyagiprerna0808.github.io/blog/posts/02-vector-search-ann/index.html</loc>
+    <lastmod>2026-05-28T20:07:49.365Z</lastmod>
   </url>
   <url>
     <loc>https://tyagiprerna0808.github.io/blog/index.html</loc>
@@ -10,10 +26,26 @@
   </url>
   <url>
     <loc>https://tyagiprerna0808.github.io/blog/about.html</loc>
-    <lastmod>2026-05-28T17:54:38.349Z</lastmod>
+    <lastmod>2026-05-28T20:07:16.769Z</lastmod>
   </url>
   <url>
     <loc>https://tyagiprerna0808.github.io/blog/posts/01-embeddings-vector-search/index.html</loc>
-    <lastmod>2026-05-28T17:22:00.545Z</lastmod>
+    <lastmod>2026-05-28T20:07:43.174Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tyagiprerna0808.github.io/blog/posts/03-tokenization/index.html</loc>
+    <lastmod>2026-05-28T20:07:54.143Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tyagiprerna0808.github.io/blog/posts/05-loss-optimization-backprop/index.html</loc>
+    <lastmod>2026-05-28T20:08:04.302Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tyagiprerna0808.github.io/blog/posts/07-retrieval-rag/index.html</loc>
+    <lastmod>2026-05-28T20:08:14.345Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tyagiprerna0808.github.io/blog/posts/09-agents/index.html</loc>
+    <lastmod>2026-05-28T20:08:22.157Z</lastmod>
   </url>
 </urlset>
