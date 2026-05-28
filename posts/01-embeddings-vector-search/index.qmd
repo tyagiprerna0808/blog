@@ -1,74 +1,112 @@
 ---
 title: "Embeddings & Vector Search Internals"
-description: "Similarity metrics, brute-force NN, IVF, PQ, and HNSW — implemented from scratch, measured on a real corpus."
+description: "Brute-force, IVF, PQ, HNSW — implemented and measured from scratch. Work in progress."
 author: "Prerna Tyagi"
-date: "2026-05-27"
+date: "2026-05-28"
 date-modified: last-modified
-categories: [retrieval, embeddings, ann]
-draft: true
+categories: [retrieval, embeddings, ANN, work-in-progress]
 reading-time: true
 toc: true
 toc-depth: 3
-code-fold: false
 ---
 
-::: {.callout-note}
-**Draft scaffold.** Section headers and placeholders only. Content gets written from notes + experiments in [ml-applied-depth/blog/01-embeddings](https://github.com/tyagiprerna0808/ml-applied-depth/tree/main/blog/01-embeddings). Remove this callout and set `draft: false` to publish.
+::: {.callout-note appearance="simple"}
+**This post is being written in public, section by section, as I work through the material.** Sections marked ✅ have running code, measured numbers, and a real result in the companion repo. Sections marked ⏳ are not done yet.
+
+Companion code: [github.com/tyagiprerna0808/ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth) · Last update: 2026-05-28.
 :::
 
 ## The question
 
-> Given a corpus of millions of documents and a query, return the top-k nearest neighbors in <10 ms with recall@10 > 0.95, on a laptop. How does that actually work?
+> Given a corpus of millions of documents and a query, return the top-k nearest neighbors in under 10 ms with recall@10 > 0.95, on a laptop. How does that actually work?
 
-*[Set up the problem. Why naive search hits a wall. What "approximate" means and the tradeoff axes: recall, latency, build time, memory.]*
+## Roadmap
 
-## 1. What an embedding actually is
+1. ✅ What an embedding is (first taste)
+2. ⏳ Similarity metrics — cosine vs dot vs L2
+3. ✅ Brute-force baseline on a real corpus
+4. ⏳ The curse of dimensionality
+5. ⏳ IVF — Inverted File Index
+6. ⏳ PQ — Product Quantization
+7. ⏳ HNSW — Hierarchical Navigable Small World
+8. ⏳ Head-to-head comparison
+9. ⏳ Production considerations
 
-*[The basis-free view. Intrinsic vs extrinsic geometry. Why "similarity" is a choice — show the same embedding compared by cosine vs dot product producing different rankings on the same query.]*
+---
 
-## 2. Similarity metrics
+## ✅ A first taste
 
-*[Cosine, dot product, L2. When each is correct. The unit-normalization trick — what it costs (and the cases where it isn't free).]*
+Code: [`blog/01-embeddings/hello_embeddings.py`](https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/blog/01-embeddings/hello_embeddings.py)
 
-## 3. Brute-force baseline
+Four sentences — two about gardening, two about finance. The model (`sentence-transformers/all-MiniLM-L6-v2`, 384-d) never sees the topic labels.
 
-*[Naive O(n) search. Vectorized numpy. Plot: runtime vs n at fixed d, runtime vs d at fixed n. The point where brute-force stops being acceptable.]*
+```
+  0.622   'I love plants'              vs  'Gardening is fun'             ← gardening
+  0.149   'The stock market crashed'   vs  'Bonds and treasury yields'    ← finance
+  0.021   'I love plants'              vs  'The stock market crashed'
+  0.016   'I love plants'              vs  'Bonds and treasury yields'
+  0.015   'Gardening is fun'           vs  'The stock market crashed'
+  0.005   'Gardening is fun'           vs  'Bonds and treasury yields'
+```
 
-## 4. The curse of dimensionality
+Cross-pairs score 30× to 120× lower than the same-topic pairs.
 
-*[Empirical: distribution of pairwise distances at d=10, 100, 1000. Plot. Explain what the concentration means for nearest-neighbor algorithms.]*
+The gardening pair (0.62) outscores the finance pair (0.15) — both topical neighbors, but *"I love plants"* and *"Gardening is fun"* are closer in sentiment-and-meaning than *"stock market crashed"* (a panic event) and *"bonds and treasury yields"* (fixed-income instruments). Embeddings reflect meaning, not just topic labels.
 
-## 5. IVF — Inverted File Index
+---
 
-*[k-means clustering of the corpus. Probe count. Recall/latency tradeoff. From-scratch implementation. Plot: recall@10 vs nprobe at fixed nlist; recall@10 vs nlist at fixed nprobe.]*
+## ✅ Brute-force search on 5,000 news passages
 
-## 6. PQ — Product Quantization
+Code: [`blog/01-embeddings/search_corpus.py`](https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/blog/01-embeddings/search_corpus.py)
 
-*[Block decomposition. Codebook learning. Asymmetric distance computation. From-scratch implementation. Memory footprint comparison. Plot.]*
+Corpus: 5,000 passages from `fancyzhx/ag_news`. Embeddings cached to disk after the first run. Top-k via one matmul per query against the L2-normalized corpus matrix.
 
-## 7. HNSW — Hierarchical Navigable Small World
+Sample query: **"tennis player wins grand slam"**. Top result:
 
-*[Multi-layer graph construction. Greedy descent. M and efSearch. The small-world property derivation, not assertion. From-scratch implementation. Plots: recall vs efSearch, recall vs M.]*
+> Roddick escapes, but not Federer. ATHENS, Greece. Andy Roddick #39;s biggest obstacle to winning the gold medal was Roger Federer...
 
-## 8. Head-to-head
+The phrase "grand slam" does not appear in the passage. The embedding placed it as the closest match because Roddick + Federer + Olympics + gold medal sits at the right point in tennis-meaning-space.
 
-*[Single plot: recall@10 vs query latency for brute-force, IVF, PQ, HNSW, and FAISS reference. Build time vs N. Memory footprint vs N. The one chart that summarizes the whole post.]*
+Another query: **"earnings report from a tech company"**. The third match was *Limited Brands* — a clothing retailer with earnings reports. The embedding weighted *earnings report* heavily and partially missed *tech company*; when a query bundles multiple concepts, the embedding averages them and one concept can dominate. This is exactly why production RAG adds reranking, query rewriting, and hybrid sparse+dense search.
 
-## 9. Production considerations
+Steady-state search latency at N=5,000: **~0.7 ms** per query (single CPU core).
 
-*[When to use what. Hosted vs in-process. Filtered search (when metadata matters). Updating the index. The decisions that don't show up in benchmarks.]*
+---
 
-## What surprised me
+## ✅ Latency scaling — when brute force breaks
 
-*[The bugs hit. The configs that didn't work. The number that came out smaller/larger than expected. This section is the credibility signal — keep it specific and honest.]*
+Code: [`blog/01-embeddings/latency_scaling.py`](https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/blog/01-embeddings/latency_scaling.py)
 
-## Build it yourself
+Measured: K=10, 50 queries per N, 384-d vectors, single CPU core (Intel i5-9300H), L2-normalized matmul.
 
-The companion notebook in [ml-applied-depth/blog/01-embeddings/assignment.ipynb](https://github.com/tyagiprerna0808/ml-applied-depth/tree/main/blog/01-embeddings) has the same content as scaffolding with TODOs and tests. Implement each section yourself before reading the worked version in `notebook.ipynb`.
+| N | mean (ms) | p95 (ms) |
+|---:|---:|---:|
+| 100 | 0.017 | 0.021 |
+| 500 | 0.033 | 0.036 |
+| 1,000 | 0.052 | 0.067 |
+| 2,500 | 0.279 | 0.440 |
+| 5,000 | 0.605 | 0.857 |
 
-## References
+![Brute-force top-10 latency vs corpus size N (5K corpus, 384-d, CPU).](https://raw.githubusercontent.com/tyagiprerna0808/ml-applied-depth/main/blog/01-embeddings/results/brute_force_latency.png)
 
-- Malkov & Yashunin, 2016 — *Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs*
-- Jégou, Douze, Schmid, 2010 — *Product quantization for nearest neighbor search*
-- Johnson, Douze, Jégou, 2017 — *Billion-scale similarity search with GPUs* (FAISS)
-- FAISS wiki — Getting Started + Index Types
+Past N ≈ 1,000 the curve is linear: ~121 ns per document. Linear extrapolation:
+
+| Latency budget | Brute-force ceiling |
+|---|---:|
+| 10 ms | ~83,000 docs |
+| 100 ms | ~830,000 docs |
+| 1 s | ~8.3 million docs |
+
+For reference: English Wikipedia is ≈ 6 million articles, MS MARCO is ≈ 8.8 million passages. Brute force can't hit a 10 ms production budget on either; HNSW, IVF, and PQ exist to climb past this wall.
+
+---
+
+## ⏳ Coming next
+
+HNSW from scratch, on the same 5K corpus. Target: ~100× latency cut at ≥95% recall vs. the brute-force baseline above, with a side-by-side plot.
+
+---
+
+## Working notes
+
+Session-1 raw notes (warts and all): [`notes/post-01-session-1.md`](https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1.md). Tutor review of those notes — including the math errors I caught: [`notes/post-01-session-1-review.md`](https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1-review.md).

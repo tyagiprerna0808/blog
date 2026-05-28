@@ -1,19 +1,32 @@
 ---
 title: "About"
 about:
-  template: jolla
+  template: trestles
+  image-shape: round
   links:
     - icon: github
       text: GitHub
       href: https://github.com/tyagiprerna0808
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/prerna-tyagi-/
+    - icon: twitter-x
+      text: X
+      href: https://x.com/prernaaa0808
 ---
 
-::: {.callout-note}
-Draft. Replace this with your own bio before publishing.
-:::
+Prerna Tyagi — AI/ML engineer. I build product-grade AI/ML systems end-to-end: problem framing, model development, API contracts, deployment, monitoring, and experimentation.
 
-I'm Prerna Tyagi. Data scientist moving into applied AI/ML engineering.
+This blog is the long-form companion to my work. Each post pairs an explanation with a from-scratch implementation in [ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth), plus an assignment notebook so a reader can build the same thing themselves before reading the worked version.
 
-Each post on this site is paired with a from-scratch implementation in [ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth) and an assignment notebook so a reader can build the same thing themselves before reading the worked version. Inspired by [Tanul Singh's gradient-descent-through-transformers series](https://tanulsingh.github.io/blog).
+## Shipped
 
-My main shipped product is **Pragya Nursery** — a real ordering platform I built for my father's nursery in Greater Noida.
+- **[Pragya Nursery](https://github.com/tyagiprerna0808/pragya-nursery-platform)** — ordering platform for my father's nursery in Greater Noida. Vercel website + Render API + Capacitor Android app + Paytm payments.
+
+## Open-source
+
+- [Credit Risk Studio](https://github.com/tyagiprerna0808/credit-risk-studio) — end-to-end ML pipeline case study
+- [Portfolio Optimizer Lab](https://github.com/tyagiprerna0808/portfolio-optimizer-lab) — optimization for decision support
+- [Treasury Forecast Lab](https://github.com/tyagiprerna0808/treasury-forecast-lab) — time-series forecasting workflow
+- [Fraud Detection Monitor](https://github.com/tyagiprerna0808/fraud-detection-monitor) — production-style fraud API
+- [Personalized Marketplace Search](https://github.com/tyagiprerna0808/fintech-github-showcase/tree/main/personalized-marketplace-search) — hybrid retrieval + reranking

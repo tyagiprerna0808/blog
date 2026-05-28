@@ -5,9 +5,15 @@ listing:
   contents: posts
   type: default
   sort: "date desc"
-  fields: [date, title, description, reading-time]
+  fields: [date, title, description, reading-time, categories]
   feed: true
   categories: true
+  date-format: "MMM D, YYYY"
 page-layout: full
 title-block-banner: false
+toc: false
 ---
+
+A series on what's inside the building blocks of modern AI products — embeddings, retrieval, evals, agents, fine-tuning — implemented from scratch and measured on real corpora. Each post is paired with a companion notebook in [ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth).
+
+Inspired by [Tanul Singh's gradient-descent-through-transformers series](https://tanulsingh.github.io/blog).

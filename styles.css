@@ -1,14 +1,115 @@
-/* Override theme tweaks. Keep it minimal — readability over flourish. */
+/* Typography — sans-serif, math-friendly, content-first. */
 
-.quarto-title-block .description {
-  font-size: 1.1rem;
-  color: #555;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #111;
+}
+
+h1 { font-size: 2.4rem; line-height: 1.2; }
+h2 { font-size: 1.55rem; margin-top: 2.5rem; }
+h3 { font-size: 1.2rem; margin-top: 1.75rem; }
+
+/* Body text width — long-form readable. */
+main, .quarto-content {
+  max-width: 760px;
+}
+
+/* Code — monospace, tight, no bootstrap warmth. */
+pre, code {
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Mono", Consolas, monospace;
 }
 
 pre code {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+code:not(pre code) {
+  background: #f4f4f6;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.92em;
+  color: #c23561;
+}
+
+/* Subtitle / description of title block */
+.quarto-title-block .description, .subtitle {
+  font-size: 1.15rem;
+  color: #555;
+  margin-top: 0.4rem;
+  font-weight: 400;
+}
+
+/* Listing — clean, tight rows. */
+.quarto-listing {
+  margin-top: 2rem;
 }
 
 .quarto-listing .listing-title {
   font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.quarto-listing .listing-description {
+  color: #555;
+}
+
+.quarto-listing-default .listing-item {
+  border-top: 1px solid #e6e6e6;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+}
+
+.quarto-listing-default .listing-item:first-child {
+  border-top: 2px solid #1a1a1a;
+}
+
+/* Callouts — softer rounding */
+.callout {
+  border-radius: 6px;
+}
+
+/* Tables — quieter borders, slightly smaller */
+table {
+  font-size: 0.96rem;
+}
+
+table thead th {
+  border-bottom: 2px solid #444;
+}
+
+/* Navbar weight */
+.navbar {
+  font-weight: 500;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* Reading time pill */
+.listing-reading-time {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Title block separator */
+.quarto-title-block {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Blockquote — clean indent */
+blockquote {
+  border-left: 3px solid #d0d0d0;
+  padding-left: 1.1rem;
+  color: #444;
+  margin: 1.5rem 0;
 }
