@@ -1,20 +1,18 @@
 ---
-title: "Embeddings & Vector Search Internals"
-description: "Brute-force, IVF, PQ, HNSW — implemented and measured from scratch. Work in progress."
+title: "01 · Embeddings & vector search"
+description: "In progress · Embeddings, similarity, brute-force baseline measured at 0.7 ms on a 5K corpus. ANN methods coming in post 02."
 author: "Prerna Tyagi"
 date: "2026-05-28"
 date-modified: last-modified
-categories: [retrieval, embeddings, ann, work-in-progress]
+categories: [in-progress, embeddings, retrieval]
 reading-time: true
 toc: false
 ---
 
-<p class="breadcrumb-mono">[← writing](../../)</p>
+<p class="breadcrumb-mono">[← series](../../)</p>
 
 ::: {.callout-note appearance="simple"}
-**This post is being written in public, section by section, as I work through the material.** Sections marked ✅ have running code, measured numbers, and a real result in the companion repo. Sections marked ⏳ are not done yet.
-
-Companion code: [github.com/tyagiprerna0808/ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth) · Last update: 2026-05-28.
+**Part 1 of *Building Blocks of Modern AI* — in progress.** This post is being written in public, section by section. Companion code: [github.com/tyagiprerna0808/ml-applied-depth](https://github.com/tyagiprerna0808/ml-applied-depth). Last update: 2026-05-28.
 :::
 
 ## The question
@@ -27,11 +25,7 @@ Companion code: [github.com/tyagiprerna0808/ml-applied-depth](https://github.com
 2. ⏳ Similarity metrics — cosine vs dot vs L2
 3. ✅ Brute-force baseline on a real corpus
 4. ⏳ The curse of dimensionality
-5. ⏳ IVF — Inverted File Index
-6. ⏳ PQ — Product Quantization
-7. ⏳ HNSW — Hierarchical Navigable Small World
-8. ⏳ Head-to-head comparison
-9. ⏳ Production considerations
+5. ⏳ Coming next — [post 02 · ANN from scratch (HNSW, IVF, PQ)](../02-vector-search-ann/)
 
 ---
 
@@ -98,16 +92,14 @@ Past N ≈ 1,000 the curve is linear: ~121 ns per document. Linear extrapolation
 | 100 ms | ~830,000 docs |
 | 1 s | ~8.3 million docs |
 
-For reference: English Wikipedia is ≈ 6 million articles, MS MARCO is ≈ 8.8 million passages. Brute force can't hit a 10 ms production budget on either; HNSW, IVF, and PQ exist to climb past this wall.
+For reference: English Wikipedia is ≈ 6 million articles, MS MARCO is ≈ 8.8 million passages. Brute force can't hit a 10 ms production budget on either; HNSW, IVF, and PQ exist to climb past this wall — covered in [post 02](../02-vector-search-ann/).
 
 ---
 
 ## ⏳ Coming next
 
-HNSW from scratch, on the same 5K corpus. Target: ~100× latency cut at ≥95% recall vs. the brute-force baseline above, with a side-by-side plot.
-
----
+Post 02 — ANN data structures from scratch (HNSW, IVF, PQ). Same 5K corpus, target ~100× latency cut at ≥95% recall vs. the brute-force baseline above.
 
 ## Working notes
 
-Session-1 raw notes (warts and all): [`notes/post-01-session-1.md`](https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1.md). Tutor review of those notes — including the math errors I caught: [`notes/post-01-session-1-review.md`](https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1-review.md).
+Session-1 raw notes: [`notes/post-01-session-1.md`](https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1.md). Tutor review of those notes — including the math errors caught: [`notes/post-01-session-1-review.md`](https://github.com/tyagiprerna0808/ml-applied-depth/blob/main/notes/post-01-session-1-review.md).

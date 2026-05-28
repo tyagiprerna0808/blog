@@ -1,0 +1,24 @@
+---
+title: "02 · Vector search — ANN from scratch"
+description: "Planned · Approximate nearest neighbor methods. HNSW, IVF, PQ built from scratch. The wall brute force can't climb."
+author: "Prerna Tyagi"
+date: "2026-05-28"
+categories: [planned, retrieval, ann]
+reading-time: true
+toc: false
+---
+
+<p class="breadcrumb-mono">[← series](../../)</p>
+
+::: {.callout-tip appearance="simple"}
+**Planned.** Part of *Building Blocks of Modern AI*. Companion code lands at [`blog/02-vector-search-ann/`](https://github.com/tyagiprerna0808/ml-applied-depth) when work starts.
+:::
+
+## Planned coverage
+
+- The wall — brute force breaks past ~80K docs at a 10 ms latency budget (extrapolated from [post 01](../01-embeddings-vector-search/))
+- **IVF** (inverted file index) — k-means partitioning, probe count, recall/latency tradeoff, from scratch
+- **PQ** (product quantization) — codebooks, asymmetric distance computation, from scratch
+- **HNSW** (hierarchical navigable small world) — graph construction, greedy descent, the M and efSearch knobs, from scratch
+- **Head-to-head** — brute force vs IVF vs PQ vs HNSW vs FAISS reference, all measured on the same 5K corpus
+- **When to use what** — in-process vs managed (Pinecone / Qdrant / Weaviate) and where the cliff is

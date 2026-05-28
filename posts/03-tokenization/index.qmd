@@ -1,0 +1,25 @@
+---
+title: "03 · Tokenization"
+description: "Planned · BPE, WordPiece, SentencePiece. How text becomes integers, and why the choice shapes everything downstream."
+author: "Prerna Tyagi"
+date: "2026-05-28"
+categories: [planned, tokenization, bpe]
+reading-time: true
+toc: false
+---
+
+<p class="breadcrumb-mono">[← series](../../)</p>
+
+::: {.callout-tip appearance="simple"}
+**Planned.** Part of *Building Blocks of Modern AI*.
+:::
+
+## Planned coverage
+
+- Why tokenization matters — what changes if you get it wrong (multilingual, code, math)
+- Character-level vs word-level — the extremes and what each costs
+- **BPE** (byte-pair encoding) from scratch — the algorithm GPT / RoBERTa / Llama use
+- **WordPiece** — what BERT does differently and why
+- **SentencePiece + Unigram** — Google's approach for multilingual
+- Comparing tokenizer outputs on the same multilingual text
+- Production considerations — vocab size, OOV handling, multilingual tradeoffs, byte-fallback

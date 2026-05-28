@@ -1,0 +1,25 @@
+---
+title: "09 · Agent loops & tool use"
+description: "Planned · ReAct from scratch. Tool calling internals. The control flow that makes models act, not just generate."
+author: "Prerna Tyagi"
+date: "2026-05-28"
+categories: [planned, agents, react, tool-use]
+reading-time: true
+toc: false
+---
+
+<p class="breadcrumb-mono">[← series](../../)</p>
+
+::: {.callout-tip appearance="simple"}
+**Planned.** Final post of *Building Blocks of Modern AI* — pulls earlier blocks together into a working loop.
+:::
+
+## Planned coverage
+
+- The basic loop — observe, think, act, observe, repeat
+- **ReAct from scratch** — without LangChain
+- **Tool calling** — function-calling APIs and what the JSON schema actually gives you
+- Planning vs reacting — when each pattern is right
+- **Error recovery** — what happens when the tool fails (and how often it does)
+- Short-term context vs long-term memory
+- The gap between "works in a demo" and "works in production"

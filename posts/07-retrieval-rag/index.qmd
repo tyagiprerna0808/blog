@@ -1,0 +1,25 @@
+---
+title: "07 · Retrieval & RAG"
+description: "Planned · Sparse + dense + reranking, then assembled into a RAG pipeline that doesn't pretend retrieval is solved."
+author: "Prerna Tyagi"
+date: "2026-05-28"
+categories: [planned, retrieval, rag, bm25]
+reading-time: true
+toc: false
+---
+
+<p class="breadcrumb-mono">[← series](../../)</p>
+
+::: {.callout-tip appearance="simple"}
+**Planned.** Part of *Building Blocks of Modern AI*. Builds on embeddings ([01](../01-embeddings-vector-search/)) and ANN ([02](../02-vector-search-ann/)).
+:::
+
+## Planned coverage
+
+- **BM25 from scratch** — the keyword baseline that still wins more than people admit
+- **Dense retrieval** — extending post 01's embeddings to a real corpus
+- **Hybrid scoring** — reciprocal rank fusion, weighted combination
+- **Cross-encoder reranking** — when it helps, when it hurts
+- RAG end-to-end on a real corpus, measured
+- Failure modes — query rewriting, multi-hop, lost-in-the-middle, citation faithfulness
+- The gap between "RAG works on a demo" and "RAG works in production"

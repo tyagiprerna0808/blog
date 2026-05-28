@@ -1,0 +1,25 @@
+---
+title: "05 · Loss, optimization, backpropagation"
+description: "Planned · How models learn. Loss functions, gradient descent, Adam, backprop derived end-to-end on a 2-layer MLP."
+author: "Prerna Tyagi"
+date: "2026-05-28"
+categories: [planned, training, backprop, optimization]
+reading-time: true
+toc: false
+---
+
+<p class="breadcrumb-mono">[← series](../../)</p>
+
+::: {.callout-tip appearance="simple"}
+**Planned.** Part of *Building Blocks of Modern AI*. This post is the literal mechanism behind the signature line — *loss decreases with optimized iterations* is the algorithm.
+:::
+
+## Planned coverage
+
+- The loss function family — MSE, cross-entropy, contrastive — when each is right
+- **Gradient descent** — vanilla, SGD, mini-batch
+- **Backpropagation** — chain rule, derived end-to-end on a 2-layer MLP
+- **Adam, AdamW, momentum** — what each fixes vs vanilla SGD
+- Learning rate schedules — warmup, cosine; the production defaults
+- Vanishing / exploding gradients — why they happen, what fixes them
+- From-scratch implementation in NumPy, then PyTorch

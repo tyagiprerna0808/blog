@@ -1,0 +1,24 @@
+---
+title: "06 · Fine-tuning fundamentals — LoRA"
+description: "Planned · When to fine-tune, when to prompt. LoRA math + QLoRA, run on a small open model end-to-end."
+author: "Prerna Tyagi"
+date: "2026-05-28"
+categories: [planned, fine-tuning, lora]
+reading-time: true
+toc: false
+---
+
+<p class="breadcrumb-mono">[← series](../../)</p>
+
+::: {.callout-tip appearance="simple"}
+**Planned.** First application post in *Building Blocks of Modern AI* — builds directly on attention ([04](../04-attention-from-scratch/)) and optimization ([05](../05-loss-optimization-backprop/)).
+:::
+
+## Planned coverage
+
+- The fine-tuning question — when does it beat a well-engineered prompt
+- **Full fine-tuning** — what it costs (compute, memory, dataset, eval discipline)
+- **LoRA** — the low-rank decomposition math, why r=8 is a workable default
+- **QLoRA** — what 4-bit quantization buys you in memory
+- Practical workflow on a small open model (TinyLlama or similar) — end to end
+- Eval-driven iteration — picking when to stop training

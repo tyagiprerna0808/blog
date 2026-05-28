@@ -1,0 +1,24 @@
+---
+title: "08 · Evals for generative systems"
+description: "Planned · LLM-as-judge, golden sets, a regression harness. The eval discipline that catches what metrics miss."
+author: "Prerna Tyagi"
+date: "2026-05-28"
+categories: [planned, evals, llm-as-judge]
+reading-time: true
+toc: false
+---
+
+<p class="breadcrumb-mono">[← series](../../)</p>
+
+::: {.callout-tip appearance="simple"}
+**Planned.** Part of *Building Blocks of Modern AI*.
+:::
+
+## Planned coverage
+
+- Why classical metrics (BLEU, ROUGE) fail for generative tasks
+- **Golden sets** — building, curating, versioning
+- **LLM-as-judge** — pairwise vs pointwise, calibration against humans
+- **Rubric design** — what to measure beyond "is it good"
+- A regression harness you can drop into CI
+- Cost vs signal — cheaper judges, bigger judges, when each makes sense

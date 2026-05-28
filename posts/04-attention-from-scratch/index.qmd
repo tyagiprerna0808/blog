@@ -1,0 +1,25 @@
+---
+title: "04 · Attention from scratch"
+description: "Planned · Scaled dot-product attention, multi-head, MQA / GQA. The math derived and the code written line by line."
+author: "Prerna Tyagi"
+date: "2026-05-28"
+categories: [planned, attention, transformers]
+reading-time: true
+toc: false
+---
+
+<p class="breadcrumb-mono">[← series](../../)</p>
+
+::: {.callout-tip appearance="simple"}
+**Planned.** Part of *Building Blocks of Modern AI*.
+:::
+
+## Planned coverage
+
+- The intuition — weighted average of values, weighted by similarity of queries to keys
+- **Q, K, V** — what each represents and why three projections, not one
+- **Scaled dot-product attention** — the formula derived; the √d_k scaling and what breaks without it
+- **Multi-head attention** — what splitting into heads actually buys you
+- **Variants** — MQA, GQA, MLA at a glance — why production LLMs use them
+- Positional information — sinusoidal and RoPE, in this post
+- Implementation from scratch in NumPy, then in PyTorch with shape-by-shape commentary
